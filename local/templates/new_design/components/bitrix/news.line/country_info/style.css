@@ -1,0 +1,62 @@
+.is-country__block { padding: 0 0 40px; }
+.is-country__block h3 { position: relative; font-size: 24px; color: #000; font-weight: 600; padding: 12px 0 22px; margin-bottom: 25px; border-bottom: solid 2px #e0e0e0; }
+.is-country__block h3:before , .is-country__block h3:after { content: ''; position: absolute; bottom: -7px; width: 14px; height: 14px; background: url("/image/new_design/plus.png") center no-repeat; }
+.is-country__block h3:after { right: 0; }
+
+.is-country__block .is-country__slogan p { padding: 0; margin: 0; font-size: 18px; line-height: 28px; color: #000; text-align: left; }
+.is-country__block .is-country__text { max-width: 80%; }
+.is-country__block .is-country__text p { padding: 10px 0; margin: 0; font-size: 14px; line-height: 22px; color: #000; text-align: left; }
+
+.is-country__list {
+	display: -webkit-flex;
+   display: -ms-flexbox;
+   display: flex;
+ 
+   -webkit-flex-wrap: wrap;
+   -ms-flex-wrap: wrap;
+   flex-wrap: wrap;
+	text-align: justify;
+	
+	position: relative; margin: 0 0 0 -1%; padding-bottom: 20px;
+}
+.is-country__item {
+	display: -webkit-flex;
+   	display: -ms-flexbox;
+   	display: flex;
+	text-decoration: none;
+   -webkit-flex-wrap: wrap;
+   -ms-flex-wrap: wrap;
+   flex-wrap: wrap;
+	width: 48%; box-sizing: border-box; 
+	border: solid 1px #e0e0e0; 
+	background: #fff; padding: 3px 15px; 
+	font-size: 14px; line-height: 22px; 
+	color: #000; vertical-align: top; margin:15px 1% 0; 
+}
+.is-country__item:hover { 
+	border: solid 1px #ff8a00;
+}
+.is-country__name { font-size: 16px; font-weight: 600; }
+
+@media (max-width: 768px){
+	.is-country__block { padding: 30px 0; }
+	.is-country__block .is-country__text { max-width: inherit; }
+	.is-country__list { display: block; margin: 0;
+
+		-webkit-flex-wrap: inherit;
+		-ms-flex-wrap: inherit;
+		flex-wrap: inherit;
+	}
+	.is-country__item {
+		display: block;
+ 
+		-webkit-flex-wrap: inherit;
+		-ms-flex-wrap: inherit;
+		flex-wrap: inherit;
+		
+		width: auto; margin: 20px 0 0; padding: 20px;
+	}
+}
+@media (max-width: 480px){
+	.is-country__item { text-align: left; }
+}

@@ -1,0 +1,6 @@
+body>div.wrapper {
+  padding-top: 0!important;
+}
+body>.wrapper>header {
+  position: static;
+}

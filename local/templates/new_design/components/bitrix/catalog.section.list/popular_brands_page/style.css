@@ -1,0 +1,52 @@
+.popular-brands { position: relative; padding: 30px 0; }
+.popular-brands__list { 
+	position: relative; 
+	width: 100%; 
+	font-size: 0; 
+	letter-spacing: normal; 
+	margin:0 0 0 -30px;
+    display: flex;
+    flex-wrap: wrap;
+}
+#brands-list .popular-brands__item { display:none;}
+.popular-brands__item { display: inline-block; width: 20%; min-width: 268px; vertical-align: middle; }
+.popular-brands__item a { position: relative; display: block; margin:0 0 40px 40px; width: 248px; line-height: 100px; height: 120px; text-align: center; border: solid 1px #e0e0e0; box-sizing: border-box; }
+.popular-brands__item a img { display: inline-block; vertical-align: middle; margin: 0 auto; max-width: 90%; height: auto; max-height: 90%; }
+.popular-brands__count { position: absolute; left: -5px; top: -7px; width: 30px; height: 30px; background: #fff; color: #ff8a00; text-align: center; line-height: 30px; font-size: 16px; transform: rotate(45deg); font-weight: 600; box-shadow: 2px 2px 2px rgb(0 0 0 / 40%); }
+.popular-brands__count span { display: block; transform: rotate(-45deg); }
+
+.popular-brands__item a:hover { border: solid 1px #ff8a00; }
+
+.popular-brands__list::-webkit-scrollbar { height: 6px; }
+.popular-brands__list::-webkit-scrollbar-track { background: #fff; }
+.popular-brands__list::-webkit-scrollbar-thumb { background-color: rgba(0,0,0,0.6); border-radius: 20px; border: 1px solid #fff; }
+
+.is-flag { position: absolute; right: -1px; bottom: -1px; padding: 5px; border: solid 1px #e0e0e0; z-index: 10; background-color: #fff; line-height: normal; }
+.is-flag img { border: solid 1px #cccc; }
+
+.popular-brands__h {display: inline-block; height: 100%; vertical-align: middle; }
+.popular-brands__name {display: inline-block; vertical-align: middle; font-size: 20px; font-weight: 400; text-align: center; line-height: 30px; }
+
+@media(max-width:788px){
+	.popular-brands__item { min-width: 300px; }
+	.popular-brands__item a { width: 280px; line-height: 280px; height: 280px; }
+}
+.popular-brands__block-btn{
+	display: flex;
+	justify-content: center;
+}
+.popular-brands__btn {
+    background-color: #ff8a00;
+    border: none;
+    color: white;
+    font-weight: 600;
+    font-size: 14px;
+    padding: 10px 20px;
+    cursor: pointer;
+    text-transform: uppercase;
+}
+
+.popular-brands__btn.disable {
+    background-color: #e0e0e0;
+    cursor: not-allowed;
+}

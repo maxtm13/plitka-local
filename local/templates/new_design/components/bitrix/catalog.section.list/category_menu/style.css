@@ -1,0 +1,39 @@
+.rbs-filter-btn.filter-burger { display: none; }
+
+.sant-menu__list { font-size: 0; letter-spacing: 0; margin-left: -1%; }
+.sant-menu__block { cursor: pointer; display: inline-block; width: 19%; vertical-align: top; margin: 0 0 10px 1%; padding: 0; box-sizing: border-box; border: solid 1px #ededed; }
+.sant-menu__block-img { text-align: center; margin-bottom: 10px }
+.sant-menu__block-img .vheight { display: inline-block; height: 180px; vertical-align: middle; }
+.sant-menu__block img { margin: 0; max-width: 100%; max-height: 180px; width: auto; height: auto; vertical-align: middle; }
+.sant-menu__block-name { text-align: center; }
+.sant-menu__block-name .vheight { display: inline-block; height: 60px; vertical-align: middle; }
+.sant-menu__block-name strong { font-size: 14px; letter-spacing: normal; display: inline-block; width: 90%; vertical-align: middle; font-weight: 600; }
+
+.sant-menu__main.hide , .sant-menu__block.hide { display: none; }
+
+.sant-menu__block:hover { border: solid 1px #ff8a00; }
+
+
+.sant-menu__subs { display: none; }
+.sant-menu__subs.show { display: block; }
+
+.sant-menu__back { margin-left: 1%; font-size: 14px; font-weight: 600; position: absolute; max-width: 100px; padding: 0 10px 2px 25px; line-height: 23px; cursor: pointer; background-position: 10px 7px; background-size: 10px; background-color: #ff8a00; background-repeat: no-repeat; background-image: url("data:image/svg+xml,%3Csvg widtrh='12' heigth='12' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 448 512'%3E%3Cpath fill='%23333' d='M77.25 256l137.4-137.4c12.5-12.5 12.5-32.75 0-45.25s-32.75-12.5-45.25 0l-160 160c-12.5 12.5-12.5 32.75 0 45.25l160 160C175.6 444.9 183.8 448 192 448s16.38-3.125 22.62-9.375c12.5-12.5 12.5-32.75 0-45.25L77.25 256zM269.3 256l137.4-137.4c12.5-12.5 12.5-32.75 0-45.25s-32.75-12.5-45.25 0l-160 160c-12.5 12.5-12.5 32.75 0 45.25l160 160C367.6 444.9 375.8 448 384 448s16.38-3.125 22.62-9.375c12.5-12.5 12.5-32.75 0-45.25L269.3 256z'/%3E%3C/svg%3E"); }
+.sant-menu__title { padding-left: 100px; font-size: 20px; font-weight: 600; margin-left: 1%; padding-bottom: 22px; }
+.sant-menu__title-sub { padding-left: 0; font-size: 18px; font-weight: 400; margin-left: 1%; padding-bottom: 22px; }
+
+#sant-menu { position: absolute; width: 0; height: 0; overflow: hidden; margin-top: -60px; }
+
+@media(max-width:1100px){
+	.sant-menu__block { margin-bottom: 20px; padding: 20px 10px; }
+	.sant-menu__block-name strong { font-size: 13px; }
+}
+@media(max-width:1000px){
+	.sant-menu__block { width: 23%; margin-bottom: 20px; }
+	.sant-menu__block-name strong { font-size: 13px; }
+}
+@media(max-width:768px){
+	.sant-menu__block { width: 31.3%; }
+}
+@media(max-width:520px){
+	.sant-menu__block { width: 48%; padding: 10px 5px; }
+}

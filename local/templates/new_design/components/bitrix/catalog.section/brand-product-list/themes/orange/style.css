@@ -1,0 +1,34 @@
+/* catalog.section */
+.bx_catalog_list_home.bx_orange .bx_bt_button  				{
+	background:#ff8a00;
+
+	color:#fff;
+	text-shadow: 0 1px 0 #ff8a00;
+	display:inline-block;
+	border-radius:3px;
+	text-align:center;
+	text-decoration:none;
+	font-size:14px;
+	cursor:pointer;
+}
+.bx_catalog_list_home.bx_orange .bx_bt_button:hover  		{
+	background:#ffa132;
+}
+.bx_catalog_list_home.bx_orange .bx_bt_button:active  		{
+	background:#ff8a00;
+}
+
+/* scu_detail_size */
+.bx-touch .bx_catalog_list_home.bx_orange .bx_item_detail_size ul li.bx_active .cnt{
+	-webkit-border-image: url(images/x2border_active.png) 2 stretch;
+	-moz-border-image: url(images/x2border_active.png) 2 stretch;
+	-o-border-image: url(images/x2border_active.png) 2 stretch;
+	border-image: url(images/x2border_active.png) 2 fill stretch;
+}
+/* scu_detail_scu */
+.bx-touch .bx_catalog_list_home.bx_orange .bx_item_detail_scu .bx_scu ul li.bx_active .cnt{
+	-webkit-border-image: url(images/x2border_active.png) 2 stretch;
+	-moz-border-image: url(images/x2border_active.png) 2 stretch;
+	-o-border-image: url(images/x2border_active.png) 2 stretch;
+	border-image: url(images/x2border_active.png) 2 fill stretch;
+}

@@ -1,0 +1,112 @@
+/*310149*/
+body>.wrapper.sticky header>.is-head__catalog {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 994;
+  transition: top 1s;
+}
+body>.wrapper.sticky header {
+  margin-top: 68px;
+}
+body>.wrapper.sticky header .is-head__basket {
+  position: fixed;
+  top: 8px;
+  z-index: 995;
+  right: calc(50% - 670px);
+}
+
+.bx_catalog_tile_ul div.prop-icon {
+  z-index: 993;
+}
+header .sort-brands__wrap .sort-brands__sublist {
+  overflow: auto;
+}
+@media (min-width: 1001px) {
+  body>.wrapper.sticky header .is-head__catalog a.root-item,
+  body>.wrapper.sticky header .is-head__catalog a.root-item-selected {
+    line-height: 68px;
+  }
+  body>.wrapper.sticky header .sort-brands {
+    display: none;
+  }
+  .mobile-close-filter {
+    display: none;
+  }
+  .is-head__catalog .depth-1>.sublevels-wrapper>.max-window,
+  .is-head__catalog .depth-1>.sublevels-wrapper>.max-window>ul {
+    height: 100%;
+  }
+  .is-head__catalog .depth-1>.sublevels-wrapper>.max-window>ul {
+    overflow: auto;
+    direction: rtl
+  }
+  .is-head__catalog .depth-1>.sublevels-wrapper>.max-window>ul * {
+    direction: ltr;
+  }
+  .is-head__catalog .depth-2>a span {
+      right: 5px;
+  }
+  .is-head__catalog .depth-2>a {
+    padding-right: 32px;
+    display: flex;
+    align-items: center;
+  }
+}
+@media (max-width: 1375px) {
+  body>.wrapper.sticky header .is-head__basket {
+    right: 20px;
+  }
+}
+@media (max-width: 1170px) {
+  body>.wrapper.sticky header .is-head__basket {
+    right: 10px;
+  }
+}
+@media (max-width: 1000px) {
+  .is-head__catalog .depth-1>.sublevels-wrapper {
+    height: auto!important;
+  }
+}
+
+@media (max-width: 1000px) {
+  body>.wrapper.sticky header>.is-head__catalog {
+    min-height: 68px;
+  }
+  body.show-menu__catalog>.wrapper.sticky header .is-head__basket,
+  body.show-menu__catalog #GoUp {
+    display: none;
+  }
+
+  body.show-menu .is-head__menu li:before, .is-head__menu li:first-child:before {
+    top: 20px;
+  }
+  .max-window .center-side.halfblock {
+    padding-left: 0;
+  }
+  .is-head__catalog li.depth-1.js-open ul.level-2>li>a {
+    display: flex;
+    align-items: center;
+  }
+    .is-head__catalog li.hashover li:hover:not(.js-open)>.sublevels-wrapper {
+      display: none;
+    }
+}
+
+.anchor_link {
+	position: absolute;
+	top: -90px;
+}
+.delivery-page h2,
+.delivery-page h3 {
+	position: relative;
+}
+
+/*312788*/
+
+@media (max-width: 1000px) {
+  .rbs-filter-btn.filter-burger {
+    display: inline-block;
+  }
+}

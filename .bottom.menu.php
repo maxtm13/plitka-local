@@ -1,0 +1,74 @@
+<?
+$aMenuLinks = Array(
+	Array(
+		"Доставка", 
+		"/content/dostavka-plitki-i-keramogranita-po-moskve-i-rossii/", 
+		Array(), 
+		Array(), 
+		"" 
+	),
+	Array(
+		"Оплата", 
+		"/oplata/", 
+		Array(), 
+		Array(), 
+		"" 
+	),
+	Array(
+		"3D Дизайн",
+		"/3d-design/",
+		Array(), 
+		Array(), 
+		"" 
+	),
+	Array(
+		"Наши клиенты", 
+		"/onas/#clients", 
+		Array(), 
+		Array(), 
+		"" 
+	),
+	Array(
+		"Ремонт", 
+		"/collections/remont", 
+		Array(), 
+		Array(), 
+		"" 
+	),
+	Array(
+		"Новости", 
+		"/news/", 
+		Array(), 
+		Array(), 
+		"" 
+	),
+	Array(
+		"Карта сайта", 
+		"/sitemap/", 
+		Array(), 
+		Array(), 
+		"" 
+	),
+	Array(
+		"Хиты продаж", 
+		"/populyarnaya-plitka/", 
+		Array(), 
+		Array(), 
+		"" 
+	),
+	Array(
+		"Статьи", 
+		"/articles/", 
+		Array(), 
+		Array(), 
+		"" 
+	),
+	Array(
+		"Контакты", 
+		"/contacts/", 
+		Array(), 
+		Array(), 
+		"" 
+	)
+);
+?>

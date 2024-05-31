@@ -1,0 +1,53 @@
+<?
+$aMenuLinks = Array(
+	Array(
+		"О нас", 
+		"/onas/", 
+		Array(), 
+		Array(), 
+		"" 
+	),
+	Array(
+		"Покупателю", 
+		"/how-to-buy/", 
+		Array(), 
+		Array(), 
+		"" 
+	),
+	Array(
+		"Оплата", 
+		"/oplata/", 
+		Array(), 
+		Array(), 
+		"" 
+	),
+	Array(
+		"Доставка", 
+		"/dostavka/", 
+		Array(), 
+		Array(), 
+		"" 
+	),
+	Array(
+		"Дизайн 3D", 
+		"/3d-design/", 
+		Array(), 
+		Array(), 
+		"" 
+	),
+	Array(
+		"Шоурум", 
+		"/shourum/", 
+		Array(), 
+		Array(), 
+		"" 
+	),
+	Array(
+		"Контакты", 
+		"/contacts/", 
+		Array(), 
+		Array(), 
+		"" 
+	)
+);
+?>

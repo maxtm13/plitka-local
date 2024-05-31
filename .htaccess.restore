@@ -1,0 +1,405 @@
+#SetEnvIf Remote_Addr "^178\.218\.49\.63|^185\.132\.242\.123" realremoteaddr
+#Order Deny,Allow
+#Deny from All
+#Allow from env=realremoteaddr
+
+
+<IfModule mod_php5.c>
+  php_flag session.use_trans_sid off
+  #php_value display_errors 1
+  #php_value mbstring.internal_encoding UTF-8
+</IfModule>
+
+<IfModule mod_rewrite.c>
+  Options +FollowSymLinks
+  RewriteEngine On
+
+  RewriteCond %{HTTP_USER_AGENT} ^.*internal\ dummy\ connection.*$ [NC]
+  RewriteRule ^/$ /error-dummy.html [L]
+  
+#	RewriteCond %{REQUEST_URI} /index.php
+#  RewriteCond %{QUERY_STRING} ^\z
+#  RewriteRule ^(.*)$ https://www.plitkanadom.ru/ [R=301,L]
+  
+#  RewriteCond %{REQUEST_URI} /index/
+#  RewriteRule ^(.*)$ https://www.plitkanadom.ru/ [R=301,L]
+
+	RewriteCond %{THE_REQUEST} /index\.php(/(.*?))? [NC]
+	RewriteRule ^(.*?)/index\.php(/(.*?))?$ /$1$2 [L,R=301,NC,NE]
+
+  #	RewriteCond %{HTTP_HOST} !^www\.plitkanadom\.ru [NC]
+  #	RewriteRule ^(.*)$ https://www.plitkanadom.ru/$1 [L,R=301]
+  
+    RewriteCond %{HTTP_HOST} ^plitkanadom.ru
+    RewriteRule (.*) https://www.plitkanadom.ru/$1 [R=301,L]
+
+	
+    RewriteCond %{HTTP_HOST} ^dev.plitkanadom.ru
+    RewriteRule (.*) https://www.plitkanadom.ru/$1 [R=301,L]
+
+
+  # Old URLs redirect Redirect 301 /old-page.html /new-page.html
+  
+  # Redirect 301 /how-to-buy/ /oplata/
+
+
+  Redirect 301 /hit/ /populyarnaya-plitka/
+  Redirect 301 /hits/ /populyarnaya-plitka/
+  Redirect 301 /catalog/ /collections/
+  
+  Redirect 301 /taxonomy/term/ /collections/rossiiskaya-plitka
+  Redirect 301 /node/ /collections/rossiiskaya-plitka/gracia-ceramica/palladio/gracia-ceramica-palladio-beige-nastennaya-plitka-25kh60
+
+  Redirect 301 /collect/plitka-pod-kamen/ /collections/plitka-pod-kamen
+  Redirect 301 /collect/plitka-relefnaya/ /collections/plitka-relefnaya
+  Redirect 301 /collect/plitka-zhyeltaya/ /collections/plitka-zhyeltaya
+  Redirect 301 /collect/plitka-kabanchik/ /collections/plitka-kabanchik
+  Redirect 301 /collect/pod-mramor/ /collections/pod-mramor
+  Redirect 301 /collect/plitka-pod-kirpich/ /collections/plitka-pod-kirpich
+  Redirect 301 /collect/plitka-pod-derevo/ /collections/plitka-pod-derevo
+  Redirect 301 /collect/plitka-seraya/ /collections/plitka-seraya
+  Redirect 301 /collect/plitka-chyernaya/ /collections/plitka-chyernaya
+  Redirect 301 /collect/plitka-sinyaya/ /collections/plitka-sinyaya
+  Redirect 301 /collect/plitka-glyantsevaya/ /collections/plitka-glyantsevaya
+  Redirect 301 /collect/plitka-belaya/ /collections/plitka-belaya
+  Redirect 301 /collect/plitka-zelyenaya/ /collections/plitka-zelyenaya
+  Redirect 301 /collect/multikolor/ /collections/multikolor
+  Redirect 301 /collect/cherno-belaya-plitka/ /collections/cherno-belaya-plitka
+  Redirect 301 /collect/plitka-fioletovaya/ /collections/plitka-fioletovaya/
+  Redirect 301 /collect/pod-parket/ /collections/pod-parket
+  Redirect 301 /collect/fasadnaya/ /collections/fasadnaya-plitka
+  Redirect 301 /collect/plitka-matovaya/ /collections/plitka-matovaya
+  Redirect 301 /collect/plitka-bezhevaya/ /collections/plitka-bezhevaya
+    
+  Redirect 301 /collections/nastennaya-plitka-v-vannuyu /collections/nastennaya-plitka-dlya-vannoy
+  
+  Redirect 301 /collections/ispanskaya-plitka/ape-ceramicas/proyect/ape-ceramicas-project-white-rect-keramogranit-20kh120 /collections/ispanskaya-plitka/ape-ceramicas/project/ape-ceramicas-project-white-rect-keramogranit-20kh120
+  Redirect 301 /collections/ispanskaya-plitka/ceracasa/urban-/ceracasa-urban-keramogranit-22-3kh22-3 /collections/ispanskaya-plitka/ceracasa/urban/ceracasa-urban-keramogranit-22-3kh22-3
+  Redirect 301 /collections/ispanskaya-plitka/ceracasa/urban-/ceracasa-urban-dekor-7-22-3kh22-3 /collections/ispanskaya-plitka/ceracasa/urban/ceracasa-urban-dekor-7-22-3kh22-3
+  Redirect 301 /collections/ispanskaya-plitka/ceracasa/urban-/ceracasa-urban-dekor-mix-22-3kh22-3 /collections/ispanskaya-plitka/ceracasa/urban/ceracasa-urban-dekor-mix-22-3kh22-3
+  Redirect 301 /collections/rossiiskaya-plitka/estima/dubl/estima-hard-naturalnyy-hd-01-keramogranit-600x600 /collections/rossiiskaya-plitka/estima/hard-naturalnyi-600x600x10/estima-hard-naturalnyy-hd-01-keramogranit-600x600
+  
+  Redirect 301 /collect/ /collections/
+  
+  Redirect 301 /collections/turetskaya-plitka/kutahya/vintage/kutahya-vintage-caramel-keramogranit-18kh118 /collections/turetskaya-plitka/kutahya/vintage-/kutahya-vintage-caramel-keramogranit-18kh118
+  Redirect 301 /collections/italyanskaya-plitka/laminam/legno-venezia/laminam-legno-venezia-keramogranit-100kh300kh0-56 /collections/italyanskaya-plitka/laminam/legno-venezia-/laminam-legno-venezia-keramogranit-100kh300kh0-56
+  Redirect 301 /collections/italyanskaya-plitka/sichenia/essenze-/sichenia-essenze-276032-rovere-ret-napolnaya-plitka-30x120 /collections/italyanskaya-plitka/sichenia/essenze/sichenia-essenze-276032-rovere-ret-napolnaya-plitka-30x120
+  Redirect 301 /collections/italyanskaya-plitka/sichenia/essenze-/sichenia-essenze-276033-abete-ret-napolnaya-plitka-30x120 /collections/italyanskaya-plitka/sichenia/essenze/sichenia-essenze-276033-abete-ret-napolnaya-plitka-30x120
+  Redirect 301 /collections/italyanskaya-plitka/sichenia/essenze-/sichenia-essenze-276034-noce-ret-napolnaya-plitka-30x120 /collections/italyanskaya-plitka/sichenia/essenze/sichenia-essenze-276034-noce-ret-napolnaya-plitka-30x120
+  Redirect 301 /collections/italyanskaya-plitka/sichenia/essenze-/sichenia-essenze-276041-larice-ret-napolnaya-plitka-20x120 /collections/italyanskaya-plitka/sichenia/essenze/sichenia-essenze-276041-larice-ret-napolnaya-plitka-20x120
+  Redirect 301 /collections/italyanskaya-plitka/sichenia/essenze-/sichenia-essenze-276042-rovere-ret-napolnaya-plitka-20x120 /collections/italyanskaya-plitka/sichenia/essenze/sichenia-essenze-276042-rovere-ret-napolnaya-plitka-20x120
+  Redirect 301 /collections/italyanskaya-plitka/sichenia/essenze-/sichenia-essenze-276043-abete-ret-napolnaya-plitka-20x120 /collections/italyanskaya-plitka/sichenia/essenze/sichenia-essenze-276043-abete-ret-napolnaya-plitka-20x120
+  Redirect 301 /collections/italyanskaya-plitka/sichenia/essenze-/sichenia-essenze-276044-noce-ret-napolnaya-plitka-20x120 /collections/italyanskaya-plitka/sichenia/essenze/sichenia-essenze-276044-noce-ret-napolnaya-plitka-20x120
+  Redirect 301 /collections/rossiiskaya-plitka/azori/eclipse/azori-eclipse-indigo-napolnaya-plitka-33-3x33-3 /collections/rossiiskaya-plitka/azori/eclipse/azori-eclipse-indigo-napolnaya-plitka-42x42
+  Redirect 301 /collections/ispanskaya-plitka/exagres/albaroc/exagres-albaroc-hulla-keramogranit-15kh120 /collections/ispanskaya-plitka/exagres/albaroc/exagres-albaroc-hulla-keramogranit-14-5kh120
+  Redirect 301 /collections/rossiiskaya-plitka/evro-keramika/imperador/evro-keramika-imperador-cherno-korichnevyy-matovyy-rektifitsirovannyy-keramogranit-30kh60 /collections/rossiiskaya-plitka/evro-keramika/imperador/evro-keramika-imperador-cherno-korichnevyy-glazurovannyy-rektifitsirovannyy-keramogranit-60kh60
+  Redirect 301 /collections/rossiiskaya-plitka/uralkeramika/yin-and-yang/uralkeramika-yin-and-yang-tfu04ian202-napolnaya-plitka-61kh61 /collections/rossiiskaya-plitka/uralkeramika/yin-and-yang/uralkeramika-yin-and-yang-gfu04iag22r-napolnaya-plitka-60kh60
+  Redirect 301 /collections/rossiiskaya-plitka/uralkeramika/yin-and-yang/uralkeramika-yin-and-yang-tfu04ian002-napolnaya-plitka-61kh61 /collections/rossiiskaya-plitka/uralkeramika/yin-and-yang/uralkeramika-yin-and-yang-gfu04iag02r-napolnaya-plitka-60kh60
+  Redirect 301 /collections/polskaya-plitka/maciej-zien/barselona-palazzo/maciej-zien-barcelona-palazzo-1-nastennaya-plitka-29-8kh59-8 /collections/polskaya-plitka/maciej-zien/barcelona-palazzo/maciej-zien-barcelona-palazzo-1-nastennaya-plitka-29-8kh59-8
+  Redirect 301 /collections/polskaya-plitka/maciej-zien/barselona-palazzo/maciej-zien-palazzo-1-bordyur-59-8kh11-5 /collections/polskaya-plitka/maciej-zien/barcelona-palazzo/maciej-zien-palazzo-1-bordyur-59-8kh11-5
+  Redirect 301 /collections/polskaya-plitka/maciej-zien/barselona-palazzo/maciej-zien-palazzo-2-bordyur-59-8kh4-5 /collections/polskaya-plitka/maciej-zien/barcelona-palazzo/maciej-zien-palazzo-2-bordyur-59-8kh4-5
+  Redirect 301 /collections/polskaya-plitka/maciej-zien/barselona/maciej-zien-barselona-mozaika-4b-22kh25-5 /collections/polskaya-plitka/maciej-zien/barcelona/maciej-zien-barselona-mozaika-4b-22kh25-5
+  Redirect 301 /collections/polskaya-plitka/maciej-zien/barselona/maciej-zien-barselona-mozaika-6a-26-5kh29-5 /collections/polskaya-plitka/maciej-zien/barcelona/maciej-zien-barselona-mozaika-6a-26-5kh29-5
+  Redirect 301 /collections/polskaya-plitka/maciej-zien/barselona/maciej-zien-barselona-mozaika-1a-23-5kh27-1 /collections/polskaya-plitka/maciej-zien/barcelona/maciej-zien-barselona-mozaika-1a-23-5kh27-1
+  Redirect 301 /collections/polskaya-plitka/maciej-zien/barselona/maciej-zien-barselona-mozaika-2a-24-5kh29-8 /collections/polskaya-plitka/maciej-zien/barcelona/maciej-zien-barselona-mozaika-2a-24-5kh29-8
+  Redirect 301 /collections/polskaya-plitka/maciej-zien/barselona/maciej-zien-barselona-mozaika-5a-31-4kh31-4 /collections/polskaya-plitka/maciej-zien/barcelona/maciej-zien-barselona-mozaika-5a-31-4kh31-4
+  Redirect 301 /collections/polskaya-plitka/maciej-zien/barselona/maciej-zien-barselona-mozaika-5b-31-4kh31-4 /collections/polskaya-plitka/maciej-zien/barcelona/maciej-zien-barselona-mozaika-5b-31-4kh31-4
+  Redirect 301 /collections/polskaya-plitka/maciej-zien/barselona/maciej-zien-barselona-mozaika-7a-27-6kh29-5 /collections/polskaya-plitka/maciej-zien/barcelona/maciej-zien-barselona-mozaika-7a-27-6kh29-5
+  Redirect 301 /collections/polskaya-plitka/maciej-zien/barselona/maciej-zien-barselona-mozaika-5c-31-4kh31-4 /collections/polskaya-plitka/maciej-zien/barcelona/maciej-zien-barselona-mozaika-5c-31-4kh31-4
+  Redirect 301 /collections/polskaya-plitka/maciej-zien/barselona/maciej-zien-barselona-sinyaya-glyantsevaya-mozaika-3a-31-9kh32-4 /collections/polskaya-plitka/maciej-zien/barcelona/maciej-zien-barselona-sinyaya-glyantsevaya-mozaika-3a-31-9kh32-4
+  
+  Redirect 301 /collections/rossiiskaya-plitka/azori/grazia/azori-grazia-chateau-grey-napolnaya-plitka-33-3kh33-3 /collections/rossiiskaya-plitka/azori/grazia/azori-grazia-chateau-grey-napolnaya-plitka-42kh42
+  Redirect 301 /collections/ispanskaya-plitka/gaya-fores/crema-marfil-40-8kh40-8/gaya-fores-crema-marfil-ost-keramogranit-40-8x40-8 /collections/ispanskaya-plitka/gaya-fores/octogono/gaya-fores-crema-marfil-ost-keramogranit-40-8x40-8
+  
+  Redirect 301 /collections/ispanskaya-plitka/dvomo/dubl/dvomo-timeless-henley-ice-napolnaya-plitka-45x45 /collections/ispanskaya-plitka/dvomo/timeless/dvomo-timeless-henley-ice-napolnaya-plitka-45x45
+Redirect 301 /collections/ispanskaya-plitka/dvomo/dubl/dvomo-timeless-brixton-napolnaya-plitka-45x45 /collections/ispanskaya-plitka/dvomo/timeless/dvomo-timeless-brixton-napolnaya-plitka-45x45
+Redirect 301 /collections/ispanskaya-plitka/dvomo/dubl/dvomo-timeless-thornbury-napolnaya-plitka-45x45 /collections/ispanskaya-plitka/dvomo/timeless/dvomo-timeless-thornbury-napolnaya-plitka-45x45
+Redirect 301 /collections/ispanskaya-plitka/dvomo/dubl/dvomo-timeless-berkeley-slate-blue-napolnaya-plitka-45x45 /collections/ispanskaya-plitka/dvomo/timeless/dvomo-timeless-berkeley-slate-blue-napolnaya-plitka-45x45
+Redirect 301 /collections/ispanskaya-plitka/dvomo/dubl/dvomo-timeless-henley-r-napolnaya-plitka-45x45 /collections/ispanskaya-plitka/dvomo/timeless/dvomo-timeless-henley-r-napolnaya-plitka-45x45
+Redirect 301 /collections/ispanskaya-plitka/dvomo/dubl/dvomo-timeless-berkeley-charcoal-napolnaya-plitka-45x45 /collections/ispanskaya-plitka/dvomo/timeless/dvomo-timeless-berkeley-charcoal-napolnaya-plitka-45x45
+Redirect 301 /collections/ispanskaya-plitka/dvomo/dubl/dvomo-timeless-borneo-grey-napolnaya-plitka-45x45 /collections/ispanskaya-plitka/dvomo/timeless/dvomo-timeless-borneo-grey-napolnaya-plitka-45x45
+Redirect 301 /collections/ispanskaya-plitka/dvomo/dubl/dvomo-timeless-optics-napolnaya-plitka-45x45 /collections/ispanskaya-plitka/dvomo/timeless/dvomo-timeless-optics-napolnaya-plitka-45x45
+Redirect 301 /collections/ispanskaya-plitka/dvomo/dubl/dvomo-timeless-geomento-napolnaya-plitka-45x45 /collections/ispanskaya-plitka/dvomo/timeless/dvomo-timeless-geomento-napolnaya-plitka-45x45
+Redirect 301 /collections/ispanskaya-plitka/dvomo/dubl/dvomo-timeless-royal-napolnaya-plitka-45x45 /collections/ispanskaya-plitka/dvomo/timeless/dvomo-timeless-royal-napolnaya-plitka-45x45
+Redirect 301 /collections/ispanskaya-plitka/dvomo/dubl/dvomo-timeless-checker-napolnaya-plitka-45x45 /collections/ispanskaya-plitka/dvomo/timeless/dvomo-timeless-checker-napolnaya-plitka-45x45
+Redirect 301 /collections/ispanskaya-plitka/dvomo/dubl/dvomo-timeless-memories-sage-belaya-matovaya-napolnaya-plitka-45x45 /collections/ispanskaya-plitka/dvomo/timeless/dvomo-timeless-memories-sage-belaya-matovaya-napolnaya-plitka-45x45
+Redirect 301 /collections/ispanskaya-plitka/dvomo/dubl/dvomo-timeless-temple-silver-belaya-matovaya-napolnaya-plitka-45x45 /collections/ispanskaya-plitka/dvomo/timeless/dvomo-timeless-memories-sage-belaya-matovaya-napolnaya-plitka-45x45
+Redirect 301 /collections/ispanskaya-plitka/dvomo/dubl/dvomo-timeless-aston-multikolor-matovaya-napolnaya-plitka-45x45 /collections/ispanskaya-plitka/dvomo/timeless/dvomo-timeless-aston-multikolor-matovaya-napolnaya-plitka-45x45
+Redirect 301 /collections/ispanskaya-plitka/dvomo/dubl/dvomo-timeless-sixties-multikolor-matovaya-napolnaya-plitka-45x45 /collections/ispanskaya-plitka/dvomo/timeless/dvomo-timeless-sixties-multikolor-matovaya-napolnaya-plitka-45x45
+  
+  Redirect 301 /hit.php /brands/
+  Redirect 301 /content/dostavka/ /dostavka/
+  Redirect 301 /collections/remont /remont/
+  Redirect 301 /collections/deshevle /promotions/nashli-deshevle-my-snizim-tsenu/
+  Redirect 301 /about/howto/ /oplata/
+  Redirect 301 /about/policy/ /policy/
+  Redirect 301 /content/dostavka-plitki-i-keramogranita-po-moskve-i-rossii/ /dostavka/
+  Redirect 301 /collections/ispanskaya-plitka/absolut-keramica /collections/ispanskaya-plitka/absolut-keramika
+  Redirect 301 /collections/polskaya-plitka/paradyz/clowd-brown /collections/polskaya-plitka/paradyz/cloud-brown
+  Redirect 301 /collections/polskaya-plitka/paradyz/clowd-rosa /collections/polskaya-plitka/paradyz/cloud-rosa
+  Redirect 301 /bitrix/admin/sale_order_detail.php /bitrix/admin/sale_order_view.php
+  Redirect 301 /collections/rossiiskaya-plitka/kerama-marazzi1 /collections/rossiiskaya-plitka/kerama-marazzi
+  Redirect 301 /collections/ispanskaya-plitka/atlanic-tiles /collections/ispanskaya-plitka/atlantic-tiles
+  Redirect 301 /collections/ispanskaya-plitka/lantic-colonial /collections/ispanskaya-plitka/l-antic-colonial
+  Redirect 301 /collections/ispanskaya-plitka/domino /collections/portugalskaya-plitka/domino
+  Redirect 301 /collections/ispaniya/gayafores/primavera /
+  Redirect 301 /collections/ispaniya /collections/ispanskaya-plitka
+  Redirect 301 /collections/rossiya /collections/rossiiskaya-plitka
+  Redirect 301 /collections/belarus /collections/belorusskaya-plitka
+  Redirect 301 /collections/polsha /collections/polskaya-plitka
+  Redirect 301 /collections/germaniya /collections/germanskaya-plitka
+  Redirect 301 /collections/ukraina /collections/ukrainskaya-plitka
+  Redirect 301 /collections/kitai /collections/kitaiskaya-plitka
+  Redirect 301 /collections/chekhiya /collections/cheshskaya-plitka
+  Redirect 301 /collections/italiya /collections/italyanskaya-plitka
+  Redirect 301 /collections/turtsiya /collections/turetskaya-plitka
+  Redirect 301 /collections/azori /collections/rossiiskaya-plitka/azori
+  Redirect 301 /collections/tubadzin /collections/polskaya-plitka/tubadzin
+  Redirect 301 /collections/ispanskaya-plitka/hdc /collections/ispanskaya-plitka/porcelanicos-hdc
+  Redirect 301 /collections/azulev /collections/ispanskaya-plitka/azulev
+  Redirect 301 /collections/ceramicalcora /collections/ispanskaya-plitka/ceramicalcora
+  Redirect 301 /collections/ispaniya/aparici/absolut /collections/ispanskaya-plitka/aparici/absolut
+  Redirect 301 /collections/ispaniya/sanchis-azulejos/forma /collections/ispanskaya-plitka/sanchis-azulejos/forma
+  Redirect 301 /collections/italyanskaya-plitka/capri/travertino /collections/italyanskaya-plitka/capri-cir/travertino
+  Redirect 301 /collections/latina-ceramica /collections/ispanskaya-plitka/latina-ceramica
+  Redirect 301 /collections/polcolorit /collections/polskaya-plitka/polcolorit
+  Redirect 301 /collections/rossiiskaya-plitka/vkz/argo /collections/rossiiskaya-plitka/la-favola/argo
+  Redirect 301 /collections/shakhtinskaya-plitka /collections/rossiiskaya-plitka/shakhtinskaya-plitka
+  Redirect 301 /collections/ukrainskaya-plitka/inter-kerama /collections/ukrainskaya-plitka/inter-cerama
+  Redirect 301 /collections/ukrainskaya-plitka/inter-kerama/brina /collections/ukrainskaya-plitka/inter-cerama/brina
+  Redirect 301 /collections/ukrainskaya-plitka/inter-kerama/confetti /collections/ukrainskaya-plitka/inter-cerama/confetti
+  Redirect 301 /collections/ukrainskaya-plitka/inter-kerama/fluid /collections/ukrainskaya-plitka/inter-cerama/fluid
+  Redirect 301 /collections/ukrainskaya-plitka/inter-kerama/imperador /collections/ukrainskaya-plitka/inter-cerama/imperador
+  Redirect 301 /collections/ukrainskaya-plitka/inter-kerama/marmol /collections/ukrainskaya-plitka/inter-cerama/marmol
+  Redirect 301 /collections/ukrainskaya-plitka/inter-kerama/massima /collections/ukrainskaya-plitka/inter-cerama/massima
+  Redirect 301 /collections/ukrainskaya-plitka/inter-kerama/novita /collections/ukrainskaya-plitka/inter-cerama/novita
+  Redirect 301 /collections/ukrainskaya-plitka/inter-kerama/reine /collections/ukrainskaya-plitka/inter-cerama/reine
+  Redirect 301 /collections/ukrainskaya-plitka/inter-kerama/venge /collections/ukrainskaya-plitka/inter-cerama/venge
+  Redirect 301 /collections/rossiiskaya-plitka/italon/charme-extra /collections/rossiiskaya-plitka/italon
+  Redirect 301 /shourum.php /shourum/
+  Redirect 301 /component/page,shop.product_details/flypage,flypage.tpl/product_id,47/category_id,10/option,com_virtuemart/itemid,36/vmcchk,1 /
+  #Redirect 301 /collections/keramogranit/ /collections/keramogranit
+  Redirect 301 /collections/rossiiskaya-plitka/laparet- /collections/rossiiskaya-plitka/laparet
+  Redirect 301 /katalog-keramicheskoy-plitki/ /collections/
+
+  Redirect 301 /santekhnika/dushevye-ugolki-stenki-i-poddony/rgw/rgw-screens-sc-82-shtorka-na-vannu-razdvizhnaya-dvustvorchataya-s-bokovym-elementom-z-52-steklo-shinshila-150х75х150 /santekhnika/dushevye-ugolki-stenki-i-poddony/rgw/rgw-screens-sc-82-shtorka-na-vannu-razdvizhnaya-dvustvorchataya-s-bokovym-elementom-z-52-steklo-shinshila-150-75-150
+  Redirect 301 /santekhnika/dushevye-ugolki-stenki-i-poddony/rgw/rgw-screens-sc-82-shtorka-na-vannu-razdvizhnaya-dvustvorchataya-s-bokovym-elementom-z-52-steklo-shinshila-150х80х150 /santekhnika/dushevye-ugolki-stenki-i-poddony/rgw/rgw-screens-sc-82-shtorka-na-vannu-razdvizhnaya-dvustvorchataya-s-bokovym-elementom-z-52-steklo-shinshila-150-80-150
+  Redirect 301 /santekhnika/dushevye-ugolki-stenki-i-poddony/rgw/rgw-screens-sc-82-shtorka-na-vannu-razdvizhnaya-dvustvorchataya-s-bokovym-elementom-z-52-steklo-shinshila-170х70х150 /santekhnika/dushevye-ugolki-stenki-i-poddony/rgw/rgw-screens-sc-82-shtorka-na-vannu-razdvizhnaya-dvustvorchataya-s-bokovym-elementom-z-52-steklo-shinshila-170-70-150
+  Redirect 301 /santekhnika/dushevye-ugolki-stenki-i-poddony/rgw/rgw-screens-sc-82-shtorka-na-vannu-razdvizhnaya-dvustvorchataya-s-bokovym-elementom-z-52-steklo-shinshila-170х75х150 /santekhnika/dushevye-ugolki-stenki-i-poddony/rgw/rgw-screens-sc-82-shtorka-na-vannu-razdvizhnaya-dvustvorchataya-s-bokovym-elementom-z-52-steklo-shinshila-170-75-150
+  Redirect 301 /santekhnika/dushevye-ugolki-stenki-i-poddony/rgw/rgw-screens-sc-82-shtorka-na-vannu-razdvizhnaya-dvustvorchataya-s-bokovym-elementom-z-52-steklo-shinshila-170х80х150 /santekhnika/dushevye-ugolki-stenki-i-poddony/rgw/rgw-screens-sc-82-shtorka-na-vannu-razdvizhnaya-dvustvorchataya-s-bokovym-elementom-z-52-steklo-shinshila-170-80-150
+
+  Redirect 301 /napolnye-pokrytiya/inzhenernaya-doska/greenline/frantsuzskaya-elka/greenline-frantsuzskaya-elka-matt-401-neman-inzhenernaya-doska-soedinenie-paz-greben-shponka-ugol-45-600х110х15 /napolnye-pokrytiya/inzhenernaya-doska/greenline/frantsuzskaya-elka/greenline-frantsuzskaya-elka-matt-401-neman-inzhenernaya-doska-soedinenie-paz-greben-shponka-ugol-45-600-110-15
+  Redirect 301 /napolnye-pokrytiya/inzhenernaya-doska/greenline/frantsuzskaya-elka/greenline-frantsuzskaya-elka-matt-401-neman-inzhenernaya-doska-soedinenie-paz-greben-shponka-ugol-45-600х125х15 /napolnye-pokrytiya/inzhenernaya-doska/greenline/frantsuzskaya-elka/greenline-frantsuzskaya-elka-matt-401-neman-inzhenernaya-doska-soedinenie-paz-greben-shponka-ugol-45-600-125-15
+  Redirect 301 /napolnye-pokrytiya/inzhenernaya-doska/greenline/frantsuzskaya-elka/greenline-frantsuzskaya-elka-matt-401-neman-inzhenernaya-doska-soedinenie-paz-greben-shponka-ugol-45-620х95х15 /napolnye-pokrytiya/inzhenernaya-doska/greenline/frantsuzskaya-elka/greenline-frantsuzskaya-elka-matt-401-neman-inzhenernaya-doska-soedinenie-paz-greben-shponka-ugol-45-620-95-15
+  Redirect 301 /napolnye-pokrytiya/inzhenernaya-doska/greenline/frantsuzskaya-elka/greenline-frantsuzskaya-elka-matt-402-brisben-inzhenernaya-doska-soedinenie-paz-greben-shponka-ugol-600х110х15 /napolnye-pokrytiya/inzhenernaya-doska/greenline/frantsuzskaya-elka/greenline-frantsuzskaya-elka-matt-402-brisben-inzhenernaya-doska-soedinenie-paz-greben-shponka-ugol-600-110-15
+  Redirect 301 /napolnye-pokrytiya/inzhenernaya-doska/greenline/frantsuzskaya-elka/greenline-frantsuzskaya-elka-matt-402-brisben-inzhenernaya-doska-soedinenie-paz-greben-shponka-ugol-600х125х15 /napolnye-pokrytiya/inzhenernaya-doska/greenline/frantsuzskaya-elka/greenline-frantsuzskaya-elka-matt-402-brisben-inzhenernaya-doska-soedinenie-paz-greben-shponka-ugol-600-125-15
+  Redirect 301 /napolnye-pokrytiya/inzhenernaya-doska/greenline/frantsuzskaya-elka/greenline-frantsuzskaya-elka-matt-402-brisben-inzhenernaya-doska-soedinenie-paz-greben-shponka-ugol-620х95х15 /napolnye-pokrytiya/inzhenernaya-doska/greenline/frantsuzskaya-elka/greenline-frantsuzskaya-elka-matt-402-brisben-inzhenernaya-doska-soedinenie-paz-greben-shponka-ugol-620-95-15
+  Redirect 301 /napolnye-pokrytiya/inzhenernaya-doska/greenline/frantsuzskaya-elka/greenline-frantsuzskaya-elka-matt-403-moreyn-inzhenernaya-doska-soedinenie-paz-greben-shponka-ugol-4-600х125х15 /napolnye-pokrytiya/inzhenernaya-doska/greenline/frantsuzskaya-elka/greenline-frantsuzskaya-elka-matt-403-moreyn-inzhenernaya-doska-soedinenie-paz-greben-shponka-ugol-4-600-125-15
+  Redirect 301 /napolnye-pokrytiya/inzhenernaya-doska/greenline/frantsuzskaya-elka/greenline-frantsuzskaya-elka-matt-403-moreyn-inzhenernaya-doska-soedinenie-paz-greben-shponka-ugol-4-620х95х15 /napolnye-pokrytiya/inzhenernaya-doska/greenline/frantsuzskaya-elka/greenline-frantsuzskaya-elka-matt-403-moreyn-inzhenernaya-doska-soedinenie-paz-greben-shponka-ugol-4-620-95-15
+  Redirect 301 /napolnye-pokrytiya/inzhenernaya-doska/greenline/frantsuzskaya-elka/greenline-frantsuzskaya-elka-matt-404-rubikon-inzhenernaya-doska-soedinenie-paz-greben-shponka-ugol-600х125х15 /napolnye-pokrytiya/inzhenernaya-doska/greenline/frantsuzskaya-elka/greenline-frantsuzskaya-elka-matt-404-rubikon-inzhenernaya-doska-soedinenie-paz-greben-shponka-ugol-600-125-15
+  Redirect 301 /napolnye-pokrytiya/inzhenernaya-doska/greenline/frantsuzskaya-elka/greenline-frantsuzskaya-elka-matt-404-rubikon-inzhenernaya-doska-soedinenie-paz-greben-shponka-ugol-620х95х15 /napolnye-pokrytiya/inzhenernaya-doska/greenline/frantsuzskaya-elka/greenline-frantsuzskaya-elka-matt-404-rubikon-inzhenernaya-doska-soedinenie-paz-greben-shponka-ugol-620-95-15
+  Redirect 301 /napolnye-pokrytiya/inzhenernaya-doska/greenline/frantsuzskaya-elka/greenline-frantsuzskaya-elka-matt-405-amazonka-inzhenernaya-doska-soedinenie-paz-greben-shponka-ugol-600х125х15 /napolnye-pokrytiya/inzhenernaya-doska/greenline/frantsuzskaya-elka/greenline-frantsuzskaya-elka-matt-405-amazonka-inzhenernaya-doska-soedinenie-paz-greben-shponka-ugol-600-125-15
+  Redirect 301 /napolnye-pokrytiya/inzhenernaya-doska/greenline/frantsuzskaya-elka/greenline-frantsuzskaya-elka-matt-405-amazonka-inzhenernaya-doska-soedinenie-paz-greben-shponka-ugol-620х95х15 /napolnye-pokrytiya/inzhenernaya-doska/greenline/frantsuzskaya-elka/greenline-frantsuzskaya-elka-matt-405-amazonka-inzhenernaya-doska-soedinenie-paz-greben-shponka-ugol-620-95-15
+  Redirect 301 /napolnye-pokrytiya/inzhenernaya-doska/greenline/frantsuzskaya-elka/greenline-frantsuzskaya-elka-matt-406-viamala-inzhenernaya-doska-soedinenie-paz-greben-shponka-ugol-600х125х15 /napolnye-pokrytiya/inzhenernaya-doska/greenline/frantsuzskaya-elka/greenline-frantsuzskaya-elka-matt-406-viamala-inzhenernaya-doska-soedinenie-paz-greben-shponka-ugol-600-125-15
+  Redirect 301 /napolnye-pokrytiya/inzhenernaya-doska/greenline/frantsuzskaya-elka/greenline-frantsuzskaya-elka-matt-406-viamala-inzhenernaya-doska-soedinenie-paz-greben-shponka-ugol-620х95х15 /napolnye-pokrytiya/inzhenernaya-doska/greenline/frantsuzskaya-elka/greenline-frantsuzskaya-elka-matt-406-viamala-inzhenernaya-doska-soedinenie-paz-greben-shponka-ugol-620-95-15
+  Redirect 301 /napolnye-pokrytiya/inzhenernaya-doska/greenline/frantsuzskaya-elka/greenline-frantsuzskaya-elka-matt-407-shampleyn-inzhenernaya-doska-soedinenie-paz-greben-shponka-ugo-600х125х15 /napolnye-pokrytiya/inzhenernaya-doska/greenline/frantsuzskaya-elka/greenline-frantsuzskaya-elka-matt-407-shampleyn-inzhenernaya-doska-soedinenie-paz-greben-shponka-ugo-600-125-15
+  Redirect 301 /napolnye-pokrytiya/inzhenernaya-doska/greenline/frantsuzskaya-elka/greenline-frantsuzskaya-elka-matt-407-shampleyn-inzhenernaya-doska-soedinenie-paz-greben-shponka-ugo-620х95х15 /napolnye-pokrytiya/inzhenernaya-doska/greenline/frantsuzskaya-elka/greenline-frantsuzskaya-elka-matt-407-shampleyn-inzhenernaya-doska-soedinenie-paz-greben-shponka-ugo-620-95-15
+  Redirect 301 /napolnye-pokrytiya/inzhenernaya-doska/greenline/frantsuzskaya-elka/greenline-frantsuzskaya-elka-matt-409-sayma-inzhenernaya-doska-soedinenie-paz-greben-shponka-ugol-45-600х125х15 /napolnye-pokrytiya/inzhenernaya-doska/greenline/frantsuzskaya-elka/greenline-frantsuzskaya-elka-matt-409-sayma-inzhenernaya-doska-soedinenie-paz-greben-shponka-ugol-45-600-125-15
+  Redirect 301 /napolnye-pokrytiya/inzhenernaya-doska/greenline/frantsuzskaya-elka/greenline-frantsuzskaya-elka-matt-409-sayma-inzhenernaya-doska-soedinenie-paz-greben-shponka-ugol-45-620х95х15 /napolnye-pokrytiya/inzhenernaya-doska/greenline/frantsuzskaya-elka/greenline-frantsuzskaya-elka-matt-409-sayma-inzhenernaya-doska-soedinenie-paz-greben-shponka-ugol-45-620-95-15
+  Redirect 301 /napolnye-pokrytiya/inzhenernaya-doska/greenline/frantsuzskaya-elka/greenline-frantsuzskaya-elka-matt-410-laskar-inzhenernaya-doska-soedinenie-paz-greben-shponka-ugol-4-600х125х15 /napolnye-pokrytiya/inzhenernaya-doska/greenline/frantsuzskaya-elka/greenline-frantsuzskaya-elka-matt-410-laskar-inzhenernaya-doska-soedinenie-paz-greben-shponka-ugol-4-600-125-15
+  Redirect 301 /napolnye-pokrytiya/inzhenernaya-doska/greenline/frantsuzskaya-elka/greenline-frantsuzskaya-elka-matt-410-laskar-inzhenernaya-doska-soedinenie-paz-greben-shponka-ugol-4-620х95х15 /napolnye-pokrytiya/inzhenernaya-doska/greenline/frantsuzskaya-elka/greenline-frantsuzskaya-elka-matt-410-laskar-inzhenernaya-doska-soedinenie-paz-greben-shponka-ugol-4-620-95-15
+  Redirect 301 /napolnye-pokrytiya/inzhenernaya-doska/greenline/frantsuzskaya-elka/greenline-frantsuzskaya-elka-matt-411-michigan-inzhenernaya-doska-soedinenie-paz-greben-shponka-ugol-600х125х15 /napolnye-pokrytiya/inzhenernaya-doska/greenline/frantsuzskaya-elka/greenline-frantsuzskaya-elka-matt-411-michigan-inzhenernaya-doska-soedinenie-paz-greben-shponka-ugol-600-125-15
+  Redirect 301 /napolnye-pokrytiya/inzhenernaya-doska/greenline/frantsuzskaya-elka/greenline-frantsuzskaya-elka-matt-411-michigan-inzhenernaya-doska-soedinenie-paz-greben-shponka-ugol-620х95х15 /napolnye-pokrytiya/inzhenernaya-doska/greenline/frantsuzskaya-elka/greenline-frantsuzskaya-elka-matt-411-michigan-inzhenernaya-doska-soedinenie-paz-greben-shponka-ugol-620-95-15
+  Redirect 301 /napolnye-pokrytiya/inzhenernaya-doska/greenline/frantsuzskaya-elka/greenline-frantsuzskaya-elka-village-114-murano-inzhenernaya-doska-soedinenie-paz-greben-shponka-ugo-600х125х15 /napolnye-pokrytiya/inzhenernaya-doska/greenline/frantsuzskaya-elka/greenline-frantsuzskaya-elka-village-114-murano-inzhenernaya-doska-soedinenie-paz-greben-shponka-ugo-600-125-15
+  Redirect 301 /napolnye-pokrytiya/inzhenernaya-doska/greenline/frantsuzskaya-elka/greenline-frantsuzskaya-elka-village-114-murano-inzhenernaya-doska-soedinenie-paz-greben-shponka-ugo-620х95х15 /napolnye-pokrytiya/inzhenernaya-doska/greenline/frantsuzskaya-elka/greenline-frantsuzskaya-elka-village-114-murano-inzhenernaya-doska-soedinenie-paz-greben-shponka-ugo-620-95-15
+  Redirect 301 /napolnye-pokrytiya/inzhenernaya-doska/greenline/frantsuzskaya-elka/greenline-frantsuzskaya-elka-village-141-mayorka-inzhenernaya-doska-soedinenie-paz-greben-shponka-ug-600х125х15 /napolnye-pokrytiya/inzhenernaya-doska/greenline/frantsuzskaya-elka/greenline-frantsuzskaya-elka-village-141-mayorka-inzhenernaya-doska-soedinenie-paz-greben-shponka-ug-600-125-15
+  Redirect 301 /napolnye-pokrytiya/inzhenernaya-doska/greenline/frantsuzskaya-elka/greenline-frantsuzskaya-elka-village-141-mayorka-inzhenernaya-doska-soedinenie-paz-greben-shponka-ug-620х95х15 /napolnye-pokrytiya/inzhenernaya-doska/greenline/frantsuzskaya-elka/greenline-frantsuzskaya-elka-village-141-mayorka-inzhenernaya-doska-soedinenie-paz-greben-shponka-ug-620-95-15
+  Redirect 301 /napolnye-pokrytiya/inzhenernaya-doska/greenline/frantsuzskaya-elka/greenline-frantsuzskaya-elka-village-148-teruel-inzhenernaya-doska-soedinenie-paz-greben-shponka-ugo-600х125х15 /napolnye-pokrytiya/inzhenernaya-doska/greenline/frantsuzskaya-elka/greenline-frantsuzskaya-elka-village-148-teruel-inzhenernaya-doska-soedinenie-paz-greben-shponka-ugo-600-125-15
+  Redirect 301 /napolnye-pokrytiya/inzhenernaya-doska/greenline/frantsuzskaya-elka/greenline-frantsuzskaya-elka-village-148-teruel-inzhenernaya-doska-soedinenie-paz-greben-shponka-ugo-620х95х15 /napolnye-pokrytiya/inzhenernaya-doska/greenline/frantsuzskaya-elka/greenline-frantsuzskaya-elka-village-148-teruel-inzhenernaya-doska-soedinenie-paz-greben-shponka-ugo-620-95-15
+  Redirect 301 /napolnye-pokrytiya/inzhenernaya-doska/greenline/frantsuzskaya-elka/greenline-frantsuzskaya-elka-village-149-bergamo-inzhenernaya-doska-soedinenie-paz-greben-shponka-ug-600х125х15 /napolnye-pokrytiya/inzhenernaya-doska/greenline/frantsuzskaya-elka/greenline-frantsuzskaya-elka-village-149-bergamo-inzhenernaya-doska-soedinenie-paz-greben-shponka-ug-600-125-15
+  Redirect 301 /napolnye-pokrytiya/inzhenernaya-doska/greenline/frantsuzskaya-elka/greenline-frantsuzskaya-elka-village-149-bergamo-inzhenernaya-doska-soedinenie-paz-greben-shponka-ug-620х95х15 /napolnye-pokrytiya/inzhenernaya-doska/greenline/frantsuzskaya-elka/greenline-frantsuzskaya-elka-village-149-bergamo-inzhenernaya-doska-soedinenie-paz-greben-shponka-ug-620-95-15
+  Redirect 301 /napolnye-pokrytiya/inzhenernaya-doska/greenline/frantsuzskaya-elka/greenline-frantsuzskaya-elka-village-150-ravenna-inzhenernaya-doska-soedinenie-paz-greben-shponka-ug-600х125х15 /napolnye-pokrytiya/inzhenernaya-doska/greenline/frantsuzskaya-elka/greenline-frantsuzskaya-elka-village-150-ravenna-inzhenernaya-doska-soedinenie-paz-greben-shponka-ug-600-125-15
+  Redirect 301 /napolnye-pokrytiya/inzhenernaya-doska/greenline/frantsuzskaya-elka/greenline-frantsuzskaya-elka-village-150-ravenna-inzhenernaya-doska-soedinenie-paz-greben-shponka-ug-620х95х15 /napolnye-pokrytiya/inzhenernaya-doska/greenline/frantsuzskaya-elka/greenline-frantsuzskaya-elka-village-150-ravenna-inzhenernaya-doska-soedinenie-paz-greben-shponka-ug-620-95-15
+  Redirect 301 /napolnye-pokrytiya/inzhenernaya-doska/greenline/frantsuzskaya-elka/greenline-frantsuzskaya-elka-village-151-turin-inzhenernaya-doska-soedinenie-paz-greben-shponka-ugol-600х125х15 /napolnye-pokrytiya/inzhenernaya-doska/greenline/frantsuzskaya-elka/greenline-frantsuzskaya-elka-village-151-turin-inzhenernaya-doska-soedinenie-paz-greben-shponka-ugol-600-125-15
+  Redirect 301 /napolnye-pokrytiya/inzhenernaya-doska/greenline/frantsuzskaya-elka/greenline-frantsuzskaya-elka-village-151-turin-inzhenernaya-doska-soedinenie-paz-greben-shponka-ugol-620х95х15 /napolnye-pokrytiya/inzhenernaya-doska/greenline/frantsuzskaya-elka/greenline-frantsuzskaya-elka-village-151-turin-inzhenernaya-doska-soedinenie-paz-greben-shponka-ugol-620-95-15
+  Redirect 301 /napolnye-pokrytiya/inzhenernaya-doska/italian-parquet/frantsuzkaya-elochka/italian-parquet-frantsuzkaya-elochka-yasen-termoobrabotannyy-natur-inzhenernaya-doska-2-kh-sloynaya-640х90х10 /napolnye-pokrytiya/inzhenernaya-doska/italian-parquet/frantsuzkaya-elochka/italian-parquet-frantsuzkaya-elochka-yasen-termoobrabotannyy-natur-inzhenernaya-doska-2-kh-sloynaya-640-90-10
+  Redirect 301 /napolnye-pokrytiya/inzhenernaya-doska/italian-parquet/frantsuzkaya-elochka/italian-parquet-frantsuzkaya-elochka-yasen-termoobrabotannyy-selekt-inzhenernaya-doska-2-kh-sloynaya-640х90х10 /napolnye-pokrytiya/inzhenernaya-doska/italian-parquet/frantsuzkaya-elochka/italian-parquet-frantsuzkaya-elochka-yasen-termoobrabotannyy-selekt-inzhenernaya-doska-2-kh-sloynaya-640-90-10
+  Redirect 301 /napolnye-pokrytiya/inzhenernaya-doska/italian-parquet/palubnaya-ukladka/italian-parquet-palubnaya-ukladka-orekh-evropeyskiy-proparennyy-rustik-inzhenernaya-doska-2-kh-sloyn-580-1400х140х10 /napolnye-pokrytiya/inzhenernaya-doska/italian-parquet/palubnaya-ukladka/italian-parquet-palubnaya-ukladka-orekh-evropeyskiy-proparennyy-rustik-inzhenernaya-doska-2-kh-sloyn-580-1400-140-10
+  Redirect 301 /napolnye-pokrytiya/inzhenernaya-doska/italian-parquet/palubnaya-ukladka/italian-parquet-palubnaya-ukladka-orekh-evropeyskiy-proparennyy-selekt-inzhenernaya-doska-2-kh-sloyn-580-1400х140х10 /napolnye-pokrytiya/inzhenernaya-doska/italian-parquet/palubnaya-ukladka/italian-parquet-palubnaya-ukladka-orekh-evropeyskiy-proparennyy-selekt-inzhenernaya-doska-2-kh-sloyn-580-1400-140-10
+  Redirect 301 /napolnye-pokrytiya/inzhenernaya-doska/italian-parquet/palubnaya-ukladka/italian-parquet-palubnaya-ukladka-orekh-evropeyskiy-proparennyy-selekt-inzhenernaya-doska-2-kh-sloyn-600-1440х160х13 /napolnye-pokrytiya/inzhenernaya-doska/italian-parquet/palubnaya-ukladka/italian-parquet-palubnaya-ukladka-orekh-evropeyskiy-proparennyy-selekt-inzhenernaya-doska-2-kh-sloyn-600-1440-160-13
+  Redirect 301 "/napolnye-pokrytiya/inzhenernaya-doska/italian-parquet/palubnaya-ukladka/italian-parquet-palubnaya-ukladka-orekh-evropeyskiy-proparennyy-standart-inzhenernaya-doska-2-kh-slo- 580-1400х140х10" /napolnye-pokrytiya/inzhenernaya-doska/italian-parquet/palubnaya-ukladka/italian-parquet-palubnaya-ukladka-orekh-evropeyskiy-proparennyy-standart-inzhenernaya-doska-2-kh-slo-580-1400-140-10
+  Redirect 301 /napolnye-pokrytiya/inzhenernaya-doska/italian-parquet/palubnaya-ukladka/italian-parquet-palubnaya-ukladka-orekh-evropeyskiy-proparennyy-standart-inzhenernaya-doska-2-kh-slo-600-1440х160х13 /napolnye-pokrytiya/inzhenernaya-doska/italian-parquet/palubnaya-ukladka/italian-parquet-palubnaya-ukladka-orekh-evropeyskiy-proparennyy-standart-inzhenernaya-doska-2-kh-slo-600-1440-160-13
+  Redirect 301 /napolnye-pokrytiya/inzhenernaya-doska/smolevichskiy-parketnyy-zavod/dvukhsloynaya-inzhenernaya-doska/smolevichskiy-parketnyy-zavod-dvukhsloynaya-inzhenernaya-doska-dub-naturalnyy-bez-pokrytiya-selekt-600х120х15 /napolnye-pokrytiya/inzhenernaya-doska/smolevichskiy-parketnyy-zavod/dvukhsloynaya-inzhenernaya-doska/smolevichskiy-parketnyy-zavod-dvukhsloynaya-inzhenernaya-doska-dub-naturalnyy-bez-pokrytiya-selekt-600-120-15
+  Redirect 301 /napolnye-pokrytiya/inzhenernaya-doska/smolevichskiy-parketnyy-zavod/dvukhsloynaya-inzhenernaya-doska/smolevichskiy-parketnyy-zavod-dvukhsloynaya-inzhenernaya-doska-dub-naturalnyy-bez-pokrytiya-selekt-600х90х15 /napolnye-pokrytiya/inzhenernaya-doska/smolevichskiy-parketnyy-zavod/dvukhsloynaya-inzhenernaya-doska/smolevichskiy-parketnyy-zavod-dvukhsloynaya-inzhenernaya-doska-dub-naturalnyy-bez-pokrytiya-selekt-600-90-15
+  Redirect 301 /napolnye-pokrytiya/inzhenernaya-doska/smolevichskiy-parketnyy-zavod/dvukhsloynaya-inzhenernaya-doska/smolevichskiy-parketnyy-zavod-dvukhsloynaya-inzhenernaya-doska-dub-naturalnyy-bez-pokrytiya-selekt-620х120х15 /napolnye-pokrytiya/inzhenernaya-doska/smolevichskiy-parketnyy-zavod/dvukhsloynaya-inzhenernaya-doska/smolevichskiy-parketnyy-zavod-dvukhsloynaya-inzhenernaya-doska-dub-naturalnyy-bez-pokrytiya-selekt-620-120-15
+  Redirect 301 /napolnye-pokrytiya/inzhenernaya-doska/smolevichskiy-parketnyy-zavod/dvukhsloynaya-inzhenernaya-doska/smolevichskiy-parketnyy-zavod-dvukhsloynaya-inzhenernaya-doska-dub-naturalnyy-bez-pokrytiya-standart-600х90х15 /napolnye-pokrytiya/inzhenernaya-doska/smolevichskiy-parketnyy-zavod/dvukhsloynaya-inzhenernaya-doska/smolevichskiy-parketnyy-zavod-dvukhsloynaya-inzhenernaya-doska-dub-naturalnyy-bez-pokrytiya-standart-600-90-15
+  Redirect 301 /napolnye-pokrytiya/inzhenernaya-doska/smolevichskiy-parketnyy-zavod/dvukhsloynaya-inzhenernaya-doska/smolevichskiy-parketnyy-zavod-dvukhsloynaya-inzhenernaya-doska-dub-naturalnyy-bez-pokrytiya-standart-620х120х15 /napolnye-pokrytiya/inzhenernaya-doska/smolevichskiy-parketnyy-zavod/dvukhsloynaya-inzhenernaya-doska/smolevichskiy-parketnyy-zavod-dvukhsloynaya-inzhenernaya-doska-dub-naturalnyy-bez-pokrytiya-standart-620-120-15
+  Redirect 301 /napolnye-pokrytiya/inzhenernaya-doska/smolevichskiy-parketnyy-zavod/dvukhsloynaya-inzhenernaya-doska/smolevichskiy-parketnyy-zavod-dvukhsloynaya-inzhenernaya-doska-dub-orekhovyy-bez-pokrytiya-standart-600х90х15 /napolnye-pokrytiya/inzhenernaya-doska/smolevichskiy-parketnyy-zavod/dvukhsloynaya-inzhenernaya-doska/smolevichskiy-parketnyy-zavod-dvukhsloynaya-inzhenernaya-doska-dub-orekhovyy-bez-pokrytiya-standart-600-90-15
+  Redirect 301 /napolnye-pokrytiya/inzhenernaya-doska/smolevichskiy-parketnyy-zavod/dvukhsloynaya-inzhenernaya-doska/smolevichskiy-parketnyy-zavod-dvukhsloynaya-inzhenernaya-doska-dub-orekhovyy-bez-pokrytiya-standart-620х120х15 /napolnye-pokrytiya/inzhenernaya-doska/smolevichskiy-parketnyy-zavod/dvukhsloynaya-inzhenernaya-doska/smolevichskiy-parketnyy-zavod-dvukhsloynaya-inzhenernaya-doska-dub-orekhovyy-bez-pokrytiya-standart-620-120-15
+  Redirect 301 /napolnye-pokrytiya/inzhenernaya-doska/smolevichskiy-parketnyy-zavod/dvukhsloynaya-inzhenernaya-doska/smolevichskiy-parketnyy-zavod-dvukhsloynaya-inzhenernaya-doska-dub-shokoladnyy-bez-pokrytiya-selekt-600х90х15 /napolnye-pokrytiya/inzhenernaya-doska/smolevichskiy-parketnyy-zavod/dvukhsloynaya-inzhenernaya-doska/smolevichskiy-parketnyy-zavod-dvukhsloynaya-inzhenernaya-doska-dub-shokoladnyy-bez-pokrytiya-selekt-600-90-15
+  Redirect 301 /napolnye-pokrytiya/inzhenernaya-doska/smolevichskiy-parketnyy-zavod/dvukhsloynaya-inzhenernaya-doska/smolevichskiy-parketnyy-zavod-dvukhsloynaya-inzhenernaya-doska-dub-shokoladnyy-bez-pokrytiya-selekt-620х120х15 /napolnye-pokrytiya/inzhenernaya-doska/smolevichskiy-parketnyy-zavod/dvukhsloynaya-inzhenernaya-doska/smolevichskiy-parketnyy-zavod-dvukhsloynaya-inzhenernaya-doska-dub-shokoladnyy-bez-pokrytiya-selekt-620-120-15
+  Redirect 301 /napolnye-pokrytiya/inzhenernaya-doska/smolevichskiy-parketnyy-zavod/dvukhsloynaya-inzhenernaya-doska/smolevichskiy-parketnyy-zavod-dvukhsloynaya-inzhenernaya-doska-dub-shokoladnyy-bez-pokrytiya-standar-600х90х15 /napolnye-pokrytiya/inzhenernaya-doska/smolevichskiy-parketnyy-zavod/dvukhsloynaya-inzhenernaya-doska/smolevichskiy-parketnyy-zavod-dvukhsloynaya-inzhenernaya-doska-dub-shokoladnyy-bez-pokrytiya-standar-600-90-15
+  Redirect 301 /napolnye-pokrytiya/inzhenernaya-doska/smolevichskiy-parketnyy-zavod/dvukhsloynaya-inzhenernaya-doska/smolevichskiy-parketnyy-zavod-dvukhsloynaya-inzhenernaya-doska-dub-shokoladnyy-bez-pokrytiya-standar-620х120х15 /napolnye-pokrytiya/inzhenernaya-doska/smolevichskiy-parketnyy-zavod/dvukhsloynaya-inzhenernaya-doska/smolevichskiy-parketnyy-zavod-dvukhsloynaya-inzhenernaya-doska-dub-shokoladnyy-bez-pokrytiya-standar-620-120-15
+  Redirect 301 /napolnye-pokrytiya/inzhenernaya-doska/smolevichskiy-parketnyy-zavod/dvukhsloynaya-inzhenernaya-doska/smolevichskiy-parketnyy-zavod-dvukhsloynaya-inzhenernaya-doska-dub-skandinavskiy-bez-pokrytiya-selek-600х90х15 /napolnye-pokrytiya/inzhenernaya-doska/smolevichskiy-parketnyy-zavod/dvukhsloynaya-inzhenernaya-doska/smolevichskiy-parketnyy-zavod-dvukhsloynaya-inzhenernaya-doska-dub-skandinavskiy-bez-pokrytiya-selek-600-90-15
+  Redirect 301 /napolnye-pokrytiya/inzhenernaya-doska/smolevichskiy-parketnyy-zavod/dvukhsloynaya-inzhenernaya-doska/smolevichskiy-parketnyy-zavod-dvukhsloynaya-inzhenernaya-doska-dub-skandinavskiy-bez-pokrytiya-selek-620х120х15 /napolnye-pokrytiya/inzhenernaya-doska/smolevichskiy-parketnyy-zavod/dvukhsloynaya-inzhenernaya-doska/smolevichskiy-parketnyy-zavod-dvukhsloynaya-inzhenernaya-doska-dub-skandinavskiy-bez-pokrytiya-selek-620-120-15
+  Redirect 301 /napolnye-pokrytiya/inzhenernaya-doska/smolevichskiy-parketnyy-zavod/dvukhsloynaya-inzhenernaya-doska/smolevichskiy-parketnyy-zavod-dvukhsloynaya-inzhenernaya-doska-dub-skandinavskiy-bez-pokrytiya-stand-600х90х15 /napolnye-pokrytiya/inzhenernaya-doska/smolevichskiy-parketnyy-zavod/dvukhsloynaya-inzhenernaya-doska/smolevichskiy-parketnyy-zavod-dvukhsloynaya-inzhenernaya-doska-dub-skandinavskiy-bez-pokrytiya-stand-600-90-15
+  Redirect 301 /napolnye-pokrytiya/inzhenernaya-doska/smolevichskiy-parketnyy-zavod/dvukhsloynaya-inzhenernaya-doska/smolevichskiy-parketnyy-zavod-dvukhsloynaya-inzhenernaya-doska-dub-skandinavskiy-bez-pokrytiya-stand-620х120х15 /napolnye-pokrytiya/inzhenernaya-doska/smolevichskiy-parketnyy-zavod/dvukhsloynaya-inzhenernaya-doska/smolevichskiy-parketnyy-zavod-dvukhsloynaya-inzhenernaya-doska-dub-skandinavskiy-bez-pokrytiya-stand-620-120-15
+  Redirect 301 /napolnye-pokrytiya/inzhenernaya-doska/smolevichskiy-parketnyy-zavod/dvukhsloynaya-inzhenernaya-doska/smolevichskiy-parketnyy-zavod-dvukhsloynaya-inzhenernaya-doska-dub-vanilnyy-bez-pokrytiya-selekt-600х90х15 /napolnye-pokrytiya/inzhenernaya-doska/smolevichskiy-parketnyy-zavod/dvukhsloynaya-inzhenernaya-doska/smolevichskiy-parketnyy-zavod-dvukhsloynaya-inzhenernaya-doska-dub-vanilnyy-bez-pokrytiya-selekt-600-90-15
+  Redirect 301 /napolnye-pokrytiya/inzhenernaya-doska/smolevichskiy-parketnyy-zavod/dvukhsloynaya-inzhenernaya-doska/smolevichskiy-parketnyy-zavod-dvukhsloynaya-inzhenernaya-doska-dub-vanilnyy-bez-pokrytiya-standart-600х120х15 /napolnye-pokrytiya/inzhenernaya-doska/smolevichskiy-parketnyy-zavod/dvukhsloynaya-inzhenernaya-doska/smolevichskiy-parketnyy-zavod-dvukhsloynaya-inzhenernaya-doska-dub-vanilnyy-bez-pokrytiya-standart-600-120-15
+  Redirect 301 /napolnye-pokrytiya/inzhenernaya-doska/smolevichskiy-parketnyy-zavod/dvukhsloynaya-inzhenernaya-doska/smolevichskiy-parketnyy-zavod-dvukhsloynaya-inzhenernaya-doska-dub-vanilnyy-bez-pokrytiya-standart-600х90х15 /napolnye-pokrytiya/inzhenernaya-doska/smolevichskiy-parketnyy-zavod/dvukhsloynaya-inzhenernaya-doska/smolevichskiy-parketnyy-zavod-dvukhsloynaya-inzhenernaya-doska-dub-vanilnyy-bez-pokrytiya-standart-600-90-15
+  Redirect 301 /napolnye-pokrytiya/inzhenernaya-doska/smolevichskiy-parketnyy-zavod/dvukhsloynaya-inzhenernaya-doska/smolevichskiy-parketnyy-zavod-dvukhsloynaya-inzhenernaya-doska-dub-vanilnyy-bez-pokrytiya-standart-620х120х15 /napolnye-pokrytiya/inzhenernaya-doska/smolevichskiy-parketnyy-zavod/dvukhsloynaya-inzhenernaya-doska/smolevichskiy-parketnyy-zavod-dvukhsloynaya-inzhenernaya-doska-dub-vanilnyy-bez-pokrytiya-standart-620-120-15
+
+  Redirect 301 /collections/rossiiskaya-plitka/keramika-budushchego-cf-systems/dekor/keramika-budushchego-cf-systems-dekor-shokolad-keramogranit-strukturirovannyy-rektifitsirovannyy-120х29-5 /collections/rossiiskaya-plitka/keramika-budushchego-cf-systems/dekor/keramika-budushchego-cf-systems-dekor-shokolad-keramogranit-strukturirovannyy-rektifitsirovannyy-120-29-5
+  Redirect 301 /collections/rossiiskaya-plitka/keramika-budushchego-cf-systems/dekor/keramika-budushchego-cf-systems-dekor-asfalt-keramogranit-strukturirovannyy-rektifitsirovannyy-120х29-5 /collections/rossiiskaya-plitka/keramika-budushchego-cf-systems/dekor/keramika-budushchego-cf-systems-dekor-asfalt-keramogranit-strukturirovannyy-rektifitsirovannyy-120-29-5
+  Redirect 301 /collections/italyanskaya-plitka/rex-ceramiche/prexious/rex-ceramiche-prexious-thunder-night-glossy-chernyy-polirovannyy-rektifitsirovannyy-keramogranit-120х280 /collections/italyanskaya-plitka/rex-ceramiche/prexious/rex-ceramiche-prexious-thunder-night-glossy-chernyy-polirovannyy-rektifitsirovannyy-keramogranit-120-280
+  Redirect 301 /collections/turetskaya-plitka/kutahya/kristal-nox/kutahya-kristal-nox-black-rectified-parlak-nano-chernyy-polirovannyy-rektifitsirovannyy-keramogranit-60х120 /collections/turetskaya-plitka/kutahya/kristal-nox/kutahya-kristal-nox-black-rectified-parlak-nano-chernyy-polirovannyy-rektifitsirovannyy-keramogranit-60-120
+  Redirect 301 /collections/turetskaya-plitka/kutahya/pulpis-prime/kutahya-pulpis-prime-dark-grey-rectified-parlak-nano-seryy-polirovannyy-rektifitsirovannyy-keramogranit-60х120 /collections/turetskaya-plitka/kutahya/pulpis-prime/kutahya-pulpis-prime-dark-grey-rectified-parlak-nano-seryy-polirovannyy-rektifitsirovannyy-keramogranit-60-120
+  Redirect 301 /collections/turetskaya-plitka/kutahya/pulpis-prime/kutahya-pulpis-prime-light-grey-rectified-parlak-nano-seryy-polirovannyy-rektifitsirovannyy-keramogranit-60х120 /collections/turetskaya-plitka/kutahya/pulpis-prime/kutahya-pulpis-prime-light-grey-rectified-parlak-nano-seryy-polirovannyy-rektifitsirovannyy-keramogranit-60-120
+  Redirect 301 /collections/turetskaya-plitka/kutahya/pulpis-prime/kutahya-pulpis-prime-dark-grey-rectified-parlak-nano-seryy-polirovannyy-rektifitsirovannyy-keramogranit-120х240 /collections/turetskaya-plitka/kutahya/pulpis-prime/kutahya-pulpis-prime-dark-grey-rectified-parlak-nano-seryy-polirovannyy-rektifitsirovannyy-keramogranit-120-240
+  Redirect 301 /collections/turetskaya-plitka/kutahya/pulpis-prime/kutahya-pulpis-prime-light-grey-rectified-parlak-nano-seryy-polirovannyy-rektifitsirovannyy-keramogranit-120х240 /collections/turetskaya-plitka/kutahya/pulpis-prime/kutahya-pulpis-prime-light-grey-rectified-parlak-nano-seryy-polirovannyy-rektifitsirovannyy-keramogranit-120-240
+  Redirect 301 /collections/italyanskaya-plitka/casa-dolce-casa/nature-mood/casa-dolce-casa-nature-mood-mount-peak-glos-rt-korichnevyy-glyantsevyy-rektifitsirovannyy-keramogranit-60х120 /collections/italyanskaya-plitka/casa-dolce-casa/nature-mood/casa-dolce-casa-nature-mood-mount-peak-glos-rt-korichnevyy-glyantsevyy-rektifitsirovannyy-keramogranit-60-120
+  Redirect 301 /collections/italyanskaya-plitka/casa-dolce-casa/nature-mood/casa-dolce-casa-nature-mood-rainforest-glos-rt-bezhevyy-glyantsevyy-rektifitsirovannyy-keramogranit-60х120 /collections/italyanskaya-plitka/casa-dolce-casa/nature-mood/casa-dolce-casa-nature-mood-rainforest-glos-rt-bezhevyy-glyantsevyy-rektifitsirovannyy-keramogranit-60-120
+  Redirect 301 /collections/rossiiskaya-plitka/idalgo/idalgo-granite-amarillo/keramika-budushchego-cf-systems-idalgo-granite-amarillo-delikat-sr-seryy-strukturirovannyy-keramogranit-59-9х59-9 /collections/rossiiskaya-plitka/idalgo/idalgo-granite-amarillo/keramika-budushchego-cf-systems-idalgo-granite-amarillo-delikat-sr-seryy-strukturirovannyy-keramogranit-59-9-59-9
+  Redirect 301 /collections/rossiiskaya-plitka/idalgo/idalgo-granite-amarillo/keramika-budushchego-cf-systems-idalgo-granite-amarillo-delikat-llr-seryy-lappatirovannyy-keramogranit-59-9х59-9 /collections/rossiiskaya-plitka/idalgo/idalgo-granite-amarillo/keramika-budushchego-cf-systems-idalgo-granite-amarillo-delikat-llr-seryy-lappatirovannyy-keramogranit-59-9-59-9
+  Redirect 301 /collections/rossiiskaya-plitka/idalgo/granite-arabesko/keramika-budushchego-cf-systems-idalgo-granite-arabesko-layt-mr-korichnevyy-matovyy-rektifitsirovann-59-9х59-9 /collections/rossiiskaya-plitka/idalgo/granite-arabesko/keramika-budushchego-cf-systems-idalgo-granite-arabesko-layt-mr-korichnevyy-matovyy-rektifitsirovann-59-9-59-9
+  Redirect 301 /collections/rossiiskaya-plitka/idalgo/granite-arabesko/keramika-budushchego-cf-systems-idalgo-granite-arabesko-dark-mr-korichnevyy-matovyy-rektifitsirovann-59-9х59-9 /collections/rossiiskaya-plitka/idalgo/granite-arabesko/keramika-budushchego-cf-systems-idalgo-granite-arabesko-dark-mr-korichnevyy-matovyy-rektifitsirovann-59-9-59-9
+  Redirect 301 /collections/rossiiskaya-plitka/idalgo/granite-arabesko/keramika-budushchego-cf-systems-idalgo-granite-arabesko-layt-llr-korichnevyy-lappatirovannyy-rektifi-59-9х59-9 /collections/rossiiskaya-plitka/idalgo/granite-arabesko/keramika-budushchego-cf-systems-idalgo-granite-arabesko-layt-llr-korichnevyy-lappatirovannyy-rektifi-59-9-59-9
+  Redirect 301 /collections/rossiiskaya-plitka/idalgo/granite-arabesko/keramika-budushchego-cf-systems-idalgo-granite-arabesko-dark-llr-korichnevyy-lappatirovannyy-rektifi-59-9х59-9 /collections/rossiiskaya-plitka/idalgo/granite-arabesko/keramika-budushchego-cf-systems-idalgo-granite-arabesko-dark-llr-korichnevyy-lappatirovannyy-rektifi-59-9-59-9
+  Redirect 301 /collections/rossiiskaya-plitka/idalgo/granite-ardezio/keramika-budushchego-cf-systems-idalgo-granite-ardezio-titanium-sr-seryy-strukturirovannyy-keramogranit-59-9х59-9 /collections/rossiiskaya-plitka/idalgo/granite-ardezio/keramika-budushchego-cf-systems-idalgo-granite-ardezio-titanium-sr-seryy-strukturirovannyy-keramogranit-59-9-59-9
+  Redirect 301 /collections/rossiiskaya-plitka/idalgo/granite-ardezio/keramika-budushchego-cf-systems-idalgo-granite-ardezio-titanium-llr-seryy-lappatirovannyy-keramogranit-59-9х59-9 /collections/rossiiskaya-plitka/idalgo/granite-ardezio/keramika-budushchego-cf-systems-idalgo-granite-ardezio-titanium-llr-seryy-lappatirovannyy-keramogranit-59-9-59-9
+  Redirect 301 /collections/rossiiskaya-plitka/idalgo/granite-vud-klassik/keramika-budushchego-cf-systems-idalgo-granite-vud-klassik-soft-svetlo-bezhevyy-lappatirovanie-lmr-keramogranit-29-5х120 /collections/rossiiskaya-plitka/idalgo/granite-vud-klassik/keramika-budushchego-cf-systems-idalgo-granite-vud-klassik-soft-svetlo-bezhevyy-lappatirovanie-lmr-keramogranit-29-5-120
+  Redirect 301 /collections/rossiiskaya-plitka/idalgo/granite-vud-klassik/keramika-budushchego-cf-systems-idalgo-granite-vud-klassik-soft-bezh-lappatirovanie-lmr-keramogranit-29-5х120 /collections/rossiiskaya-plitka/idalgo/granite-vud-klassik/keramika-budushchego-cf-systems-idalgo-granite-vud-klassik-soft-bezh-lappatirovanie-lmr-keramogranit-29-5-120
+  Redirect 301 /collections/rossiiskaya-plitka/idalgo/granite-vud-klassik/keramika-budushchego-cf-systems-idalgo-granite-vud-klassik-soft-naturalnyy-lappatirovanie-lmr-keramogranit-29-5х120 /collections/rossiiskaya-plitka/idalgo/granite-vud-klassik/keramika-budushchego-cf-systems-idalgo-granite-vud-klassik-soft-naturalnyy-lappatirovanie-lmr-keramogranit-29-5-120
+  Redirect 301 /collections/rossiiskaya-plitka/idalgo/granite-vud-klassik/keramika-budushchego-cf-systems-idalgo-granite-vud-klassik-soft-temno-korichnevyy-lappatirovanie-lmr-29-5х120 /collections/rossiiskaya-plitka/idalgo/granite-vud-klassik/keramika-budushchego-cf-systems-idalgo-granite-vud-klassik-soft-temno-korichnevyy-lappatirovanie-lmr-29-5-120
+  Redirect 301 /collections/rossiiskaya-plitka/idalgo/granite-vud-ego/keramika-budushchego-cf-systems-idalgo-granite-vud-ego-svetlo-seryy-strukturnaya-sr-keramogranit-120х59-9 /collections/rossiiskaya-plitka/idalgo/granite-vud-ego/keramika-budushchego-cf-systems-idalgo-granite-vud-ego-svetlo-seryy-strukturnaya-sr-keramogranit-120-59-9
+  Redirect 301 /collections/rossiiskaya-plitka/idalgo/granite-vud-ego/keramika-budushchego-cf-systems-idalgo-granite-vud-ego-svetlo-bezhevyy-antislip-asr-keramogranit-120х59-9 /collections/rossiiskaya-plitka/idalgo/granite-vud-ego/keramika-budushchego-cf-systems-idalgo-granite-vud-ego-svetlo-bezhevyy-antislip-asr-keramogranit-120-59-9
+  Redirect 301 /collections/rossiiskaya-plitka/idalgo/granite-vud-ego/keramika-budushchego-cf-systems-idalgo-granite-vud-ego-temno-korichnevyy-antislip-asr-keramogranit-120х59-9 /collections/rossiiskaya-plitka/idalgo/granite-vud-ego/keramika-budushchego-cf-systems-idalgo-granite-vud-ego-temno-korichnevyy-antislip-asr-keramogranit-120-59-9
+  Redirect 301 /collections/rossiiskaya-plitka/idalgo/granite-vud-ego/keramika-budushchego-cf-systems-idalgo-granite-vud-ego-korichnevyy-lappatirovannaya-lr-keramogranit-120х59-9 /collections/rossiiskaya-plitka/idalgo/granite-vud-ego/keramika-budushchego-cf-systems-idalgo-granite-vud-ego-korichnevyy-lappatirovannaya-lr-keramogranit-120-59-9
+  Redirect 301 /collections/rossiiskaya-plitka/idalgo/granite-vud-ego/keramika-budushchego-cf-systems-idalgo-granite-vud-ego-svetlo-bezhevyy-lappatirovannaya-lr-keramogranit-120х59-9 /collections/rossiiskaya-plitka/idalgo/granite-vud-ego/keramika-budushchego-cf-systems-idalgo-granite-vud-ego-svetlo-bezhevyy-lappatirovannaya-lr-keramogranit-120-59-9
+  Redirect 301 /collections/rossiiskaya-plitka/idalgo/granite-vud-ego/keramika-budushchego-cf-systems-idalgo-granite-vud-ego-svetlo-seryy-lappatirovannaya-lr-keramogranit-120х59-9 /collections/rossiiskaya-plitka/idalgo/granite-vud-ego/keramika-budushchego-cf-systems-idalgo-granite-vud-ego-svetlo-seryy-lappatirovannaya-lr-keramogranit-120-59-9
+  Redirect 301 /collections/rossiiskaya-plitka/idalgo/granite-vud-ego/keramika-budushchego-cf-systems-idalgo-granite-vud-ego-sero-goluboy-lappatirovannaya-lr-keramogranit-120х59-9 /collections/rossiiskaya-plitka/idalgo/granite-vud-ego/keramika-budushchego-cf-systems-idalgo-granite-vud-ego-sero-goluboy-lappatirovannaya-lr-keramogranit-120-59-9
+  Redirect 301 /collections/rossiiskaya-plitka/idalgo/granite-vud-ego/keramika-budushchego-cf-systems-idalgo-granite-vud-ego-temno-korichnevyy-lappatirovannaya-lr-keramogranit-120х59-9 /collections/rossiiskaya-plitka/idalgo/granite-vud-ego/keramika-budushchego-cf-systems-idalgo-granite-vud-ego-temno-korichnevyy-lappatirovannaya-lr-keramogranit-120-59-9
+  Redirect 301 /collections/rossiiskaya-plitka/idalgo/granite-vud-ego/keramika-budushchego-cf-systems-idalgo-granite-vud-ego-chernyy-lappatirovannaya-lr-keramogranit-120х59-9 /collections/rossiiskaya-plitka/idalgo/granite-vud-ego/keramika-budushchego-cf-systems-idalgo-granite-vud-ego-chernyy-lappatirovannaya-lr-keramogranit-120-59-9
+  Redirect 301 /collections/rossiiskaya-plitka/idalgo/granite-vud-ego/keramika-budushchego-cf-systems-idalgo-granite-vud-ego-korichnevyy-legkoe-lappatirovanie-llr-keramogranit-120х59-9 /collections/rossiiskaya-plitka/idalgo/granite-vud-ego/keramika-budushchego-cf-systems-idalgo-granite-vud-ego-korichnevyy-legkoe-lappatirovanie-llr-keramogranit-120-59-9
+  Redirect 301 /collections/rossiiskaya-plitka/idalgo/granite-vud-ego/keramika-budushchego-cf-systems-idalgo-granite-vud-ego-bezh-legkoe-lappatirovanie-llr-keramogranit-120х59-9 /collections/rossiiskaya-plitka/idalgo/granite-vud-ego/keramika-budushchego-cf-systems-idalgo-granite-vud-ego-bezh-legkoe-lappatirovanie-llr-keramogranit-120-59-9
+  Redirect 301 /collections/rossiiskaya-plitka/idalgo/granite-vud-ego/keramika-budushchego-cf-systems-idalgo-granite-vud-ego-seryy-legkoe-lappatirovanie-llr-keramogranit-120х59-9 /collections/rossiiskaya-plitka/idalgo/granite-vud-ego/keramika-budushchego-cf-systems-idalgo-granite-vud-ego-seryy-legkoe-lappatirovanie-llr-keramogranit-120-59-9
+  Redirect 301 /collections/rossiiskaya-plitka/idalgo/granite-vud-ego/keramika-budushchego-cf-systems-idalgo-granite-vud-ego-svetlo-bezhevyy-legkoe-lappatirovanie-llr-keramogranit-120х59-9 /collections/rossiiskaya-plitka/idalgo/granite-vud-ego/keramika-budushchego-cf-systems-idalgo-granite-vud-ego-svetlo-bezhevyy-legkoe-lappatirovanie-llr-keramogranit-120-59-9
+  Redirect 301 /collections/rossiiskaya-plitka/idalgo/granite-vud-ego/keramika-budushchego-cf-systems-idalgo-granite-vud-ego-svetlo-seryy-legkoe-lappatirovanie-llr-keramogranit-120х59-9 /collections/rossiiskaya-plitka/idalgo/granite-vud-ego/keramika-budushchego-cf-systems-idalgo-granite-vud-ego-svetlo-seryy-legkoe-lappatirovanie-llr-keramogranit-120-59-9
+  Redirect 301 /collections/rossiiskaya-plitka/idalgo/granite-vud-ego/keramika-budushchego-cf-systems-idalgo-granite-vud-ego-sero-goluboy-legkoe-lappatirovanie-llr-keramogranit-120х59-9 /collections/rossiiskaya-plitka/idalgo/granite-vud-ego/keramika-budushchego-cf-systems-idalgo-granite-vud-ego-sero-goluboy-legkoe-lappatirovanie-llr-keramogranit-120-59-9
+  Redirect 301 /collections/rossiiskaya-plitka/idalgo/granite-vud-ego/keramika-budushchego-cf-systems-idalgo-granite-vud-ego-siniy-legkoe-lappatirovanie-llr-keramogranit-120х59-9 /collections/rossiiskaya-plitka/idalgo/granite-vud-ego/keramika-budushchego-cf-systems-idalgo-granite-vud-ego-siniy-legkoe-lappatirovanie-llr-keramogranit-120-59-9
+  Redirect 301 /collections/rossiiskaya-plitka/idalgo/granite-vud-ego/keramika-budushchego-cf-systems-idalgo-granite-vud-ego-temno-korichnevyy-legkoe-lappatirovanie-llr-k-120х59-9 /collections/rossiiskaya-plitka/idalgo/granite-vud-ego/keramika-budushchego-cf-systems-idalgo-granite-vud-ego-temno-korichnevyy-legkoe-lappatirovanie-llr-k-120-59-9
+  Redirect 301 /collections/rossiiskaya-plitka/idalgo/granite-vud-ego/keramika-budushchego-cf-systems-idalgo-granite-vud-ego-chernyy-legkoe-lappatirovanie-llr-keramogranit-120х59-9 /collections/rossiiskaya-plitka/idalgo/granite-vud-ego/keramika-budushchego-cf-systems-idalgo-granite-vud-ego-chernyy-legkoe-lappatirovanie-llr-keramogranit-120-59-9
+  Redirect 301 /collections/rossiiskaya-plitka/idalgo/granite-vud-ego/keramika-budushchego-cf-systems-idalgo-granite-vud-ego-chernyy-lappatirovannaya-lr-keramogranit-120х29-5 /collections/rossiiskaya-plitka/idalgo/granite-vud-ego/keramika-budushchego-cf-systems-idalgo-granite-vud-ego-chernyy-lappatirovannaya-lr-keramogranit-120-29-5
+  Redirect 301 /collections/rossiiskaya-plitka/idalgo/granite-vud-ego/keramika-budushchego-cf-systems-idalgo-granite-vud-ego-chernyy-legkoe-lappatirovanie-llr-keramogranit-120х29-5 /collections/rossiiskaya-plitka/idalgo/granite-vud-ego/keramika-budushchego-cf-systems-idalgo-granite-vud-ego-chernyy-legkoe-lappatirovanie-llr-keramogranit-120-29-5
+  Redirect 301 /collections/rossiiskaya-plitka/idalgo/granite-namibiya/keramika-budushchego-cf-systems-idalgo-granite-namibiya-klassik-llr-seryy-lappatirovannyy-keramogranit-59-9х59-9 /collections/rossiiskaya-plitka/idalgo/granite-namibiya/keramika-budushchego-cf-systems-idalgo-granite-namibiya-klassik-llr-seryy-lappatirovannyy-keramogranit-59-9-59-9
+  Redirect 301 /collections/rossiiskaya-plitka/idalgo/granite-pallisandro/keramika-budushchego-cf-systems-idalgo-granite-pallisandro-oro-sr-bezhevyy-strukturirovannyy-keramogranit-59-9х59-9 /collections/rossiiskaya-plitka/idalgo/granite-pallisandro/keramika-budushchego-cf-systems-idalgo-granite-pallisandro-oro-sr-bezhevyy-strukturirovannyy-keramogranit-59-9-59-9
+  Redirect 301 /collections/rossiiskaya-plitka/idalgo/granite-pallisandro/keramika-budushchego-cf-systems-idalgo-granite-pallisandro-oro-llr-bezhevyy-lappatirovannyy-keramogranit-59-9х59-9 /collections/rossiiskaya-plitka/idalgo/granite-pallisandro/keramika-budushchego-cf-systems-idalgo-granite-pallisandro-oro-llr-bezhevyy-lappatirovannyy-keramogranit-59-9-59-9
+  Redirect 301 /collections/rossiiskaya-plitka/idalgo/granite-pallisandro/keramika-budushchego-cf-systems-idalgo-granite-pallisandro-klassik-mr-belyy-matovyy-keramogranit-59-9х59-9 /collections/rossiiskaya-plitka/idalgo/granite-pallisandro/keramika-budushchego-cf-systems-idalgo-granite-pallisandro-klassik-mr-belyy-matovyy-keramogranit-59-9-59-9
+  Redirect 301 /collections/rossiiskaya-plitka/idalgo/granite-pallisandro/keramika-budushchego-cf-systems-idalgo-granite-pallisandro-klassik-llr-belyy-lappatirovannyy-keramogranit-59-9х59-9 /collections/rossiiskaya-plitka/idalgo/granite-pallisandro/keramika-budushchego-cf-systems-idalgo-granite-pallisandro-klassik-llr-belyy-lappatirovannyy-keramogranit-59-9-59-9
+  Redirect 301 /collections/rossiiskaya-plitka/idalgo/granite-pallisandro/keramika-budushchego-cf-systems-idalgo-granite-pallisandro-gridzhio-mr-seryy-matovyy-keramogranit-59-9х59-9 /collections/rossiiskaya-plitka/idalgo/granite-pallisandro/keramika-budushchego-cf-systems-idalgo-granite-pallisandro-gridzhio-mr-seryy-matovyy-keramogranit-59-9-59-9
+  Redirect 301 /collections/rossiiskaya-plitka/idalgo/granite-pallisandro/keramika-budushchego-cf-systems-idalgo-granite-pallisandro-gridzhio-llr-seryy-lappatirovannyy-keramogranit-59-9х59-9 /collections/rossiiskaya-plitka/idalgo/granite-pallisandro/keramika-budushchego-cf-systems-idalgo-granite-pallisandro-gridzhio-llr-seryy-lappatirovannyy-keramogranit-59-9-59-9
+  Redirect 301 /collections/rossiiskaya-plitka/idalgo/granite-pallisandro/keramika-budushchego-cf-systems-idalgo-granite-pallisandro-nero-llr-seryy-lappatirovannyy-keramogranit-59-9х59-9 /collections/rossiiskaya-plitka/idalgo/granite-pallisandro/keramika-budushchego-cf-systems-idalgo-granite-pallisandro-nero-llr-seryy-lappatirovannyy-keramogranit-59-9-59-9
+  Redirect 301 /collections/rossiiskaya-plitka/idalgo/granite-petra/keramika-budushchego-cf-systems-idalgo-granite-petra-chernyy-legkoe-lappatirovanie-llr-keramogranit-59-9х59-9 /collections/rossiiskaya-plitka/idalgo/granite-petra/keramika-budushchego-cf-systems-idalgo-granite-petra-chernyy-legkoe-lappatirovanie-llr-keramogranit-59-9-59-9
+  Redirect 301 /collections/rossiiskaya-plitka/idalgo/granite-sandra/keramika-budushchego-cf-systems-idalgo-granite-sandra-cherno-olivkovyy-lappatirovannaya-lr-keramogranit-59-9х59-9 /collections/rossiiskaya-plitka/idalgo/granite-sandra/keramika-budushchego-cf-systems-idalgo-granite-sandra-cherno-olivkovyy-lappatirovannaya-lr-keramogranit-59-9-59-9
+  Redirect 301 /collections/rossiiskaya-plitka/idalgo/granite-sanset/keramika-budushchego-cf-systems-idalgo-granite-sanset-ardzhento-mr-seryy-matovyy-rektifitsirovannyy-59-9х59-9 /collections/rossiiskaya-plitka/idalgo/granite-sanset/keramika-budushchego-cf-systems-idalgo-granite-sanset-ardzhento-mr-seryy-matovyy-rektifitsirovannyy-59-9-59-9
+  Redirect 301 /collections/rossiiskaya-plitka/idalgo/granite-sanset/keramika-budushchego-cf-systems-idalgo-granite-sanset-gridzhio-mr-seryy-matovyy-rektifitsirovannyy-k-59-9х59-9 /collections/rossiiskaya-plitka/idalgo/granite-sanset/keramika-budushchego-cf-systems-idalgo-granite-sanset-gridzhio-mr-seryy-matovyy-rektifitsirovannyy-k-59-9-59-9
+  Redirect 301 /collections/rossiiskaya-plitka/idalgo/granite-sanset/keramika-budushchego-cf-systems-idalgo-granite-sanset-ardzhento-llr-seryy-lappatirovannyy-rektifitsi-59-9х59-9 /collections/rossiiskaya-plitka/idalgo/granite-sanset/keramika-budushchego-cf-systems-idalgo-granite-sanset-ardzhento-llr-seryy-lappatirovannyy-rektifitsi-59-9-59-9
+  Redirect 301 /collections/rossiiskaya-plitka/idalgo/granite-sanset/keramika-budushchego-cf-systems-idalgo-granite-sanset-gridzhio-llr-seryy-lappatirovannyy-rektifitsir-59-9х59-9 /collections/rossiiskaya-plitka/idalgo/granite-sanset/keramika-budushchego-cf-systems-idalgo-granite-sanset-gridzhio-llr-seryy-lappatirovannyy-rektifitsir-59-9-59-9
+  Redirect 301 /collections/rossiiskaya-plitka/idalgo/granite-silver/keramika-budushchego-cf-systems-idalgo-granite-silver-espero-sr-seryy-strukturirovannyy-keramogranit-59-9х59-9 /collections/rossiiskaya-plitka/idalgo/granite-silver/keramika-budushchego-cf-systems-idalgo-granite-silver-espero-sr-seryy-strukturirovannyy-keramogranit-59-9-59-9
+  Redirect 301 /collections/rossiiskaya-plitka/idalgo/granite-silver/keramika-budushchego-cf-systems-idalgo-granite-silver-espero-llr-seryy-lappatirovannyy-keramogranit-59-9х59-9 /collections/rossiiskaya-plitka/idalgo/granite-silver/keramika-budushchego-cf-systems-idalgo-granite-silver-espero-llr-seryy-lappatirovannyy-keramogranit-59-9-59-9
+  Redirect 301 /collections/rossiiskaya-plitka/idalgo/granite-sofiya/keramika-budushchego-cf-systems-idalgo-granite-sofiya-seryy-antratsit-lappatirovannaya-lr-keramogranit-59-9х59-9 /collections/rossiiskaya-plitka/idalgo/granite-sofiya/keramika-budushchego-cf-systems-idalgo-granite-sofiya-seryy-antratsit-lappatirovannaya-lr-keramogranit-59-9-59-9
+  Redirect 301 /collections/rossiiskaya-plitka/idalgo/granite-sofiya/keramika-budushchego-cf-systems-idalgo-granite-sofiya-cherno-olivkovyy-lappatirovannaya-lr-keramogranit-59-9х59-9 /collections/rossiiskaya-plitka/idalgo/granite-sofiya/keramika-budushchego-cf-systems-idalgo-granite-sofiya-cherno-olivkovyy-lappatirovannaya-lr-keramogranit-59-9-59-9
+  Redirect 301 /collections/rossiiskaya-plitka/idalgo/granite-stoun-imprerador/keramika-budushchego-cf-systems-idalgo-granite-stoun-imprerador-korichnevyy-legkoe-lappatirovanie-ll-59-9х59-9 /collections/rossiiskaya-plitka/idalgo/granite-stoun-imprerador/keramika-budushchego-cf-systems-idalgo-granite-stoun-imprerador-korichnevyy-legkoe-lappatirovanie-ll-59-9-59-9
+  Redirect 301 /collections/rossiiskaya-plitka/idalgo/granite-stoun-imprerador/keramika-budushchego-cf-systems-idalgo-granite-stoun-imprerador-verde-lappatirovannaya-lr-keramogranit-59-9х59-9 /collections/rossiiskaya-plitka/idalgo/granite-stoun-imprerador/keramika-budushchego-cf-systems-idalgo-granite-stoun-imprerador-verde-lappatirovannaya-lr-keramogranit-59-9-59-9
+  Redirect 301 /collections/rossiiskaya-plitka/idalgo/granite-stoun-kalakatta/keramika-budushchego-idalgo-granite-stoun-kalakatta-zhemchug-rett-keramogranit-legkoe-lappatirovanie-60х120 /collections/rossiiskaya-plitka/idalgo/granite-stoun-kalakatta/keramika-budushchego-idalgo-granite-stoun-kalakatta-zhemchug-rett-keramogranit-legkoe-lappatirovanie-60-120
+  Redirect 301 /collections/rossiiskaya-plitka/idalgo/granite-stoun-kalakatta/keramika-budushchego-idalgo-granite-stoun-kalakatta-shampan-rett-keramogranit-legkoe-lappatirovanie-60х120 /collections/rossiiskaya-plitka/idalgo/granite-stoun-kalakatta/keramika-budushchego-idalgo-granite-stoun-kalakatta-shampan-rett-keramogranit-legkoe-lappatirovanie-60-120
+  Redirect 301 /collections/rossiiskaya-plitka/idalgo/granite-stoun-kalakatta/keramika-budushchego-idalgo-granite-stoun-kalakatta-zhemchug-rett-keramogranit-legkoe-lappatirovanie-60х60 /collections/rossiiskaya-plitka/idalgo/granite-stoun-kalakatta/keramika-budushchego-idalgo-granite-stoun-kalakatta-zhemchug-rett-keramogranit-legkoe-lappatirovanie-60-60
+  Redirect 301 /collections/rossiiskaya-plitka/idalgo/granite-stoun-kalakatta/keramika-budushchego-idalgo-granite-stoun-kalakatta-shampan-rett-keramogranit-legkoe-lappatirovanie-60х60 /collections/rossiiskaya-plitka/idalgo/granite-stoun-kalakatta/keramika-budushchego-idalgo-granite-stoun-kalakatta-shampan-rett-keramogranit-legkoe-lappatirovanie-60-60
+  Redirect 301 /collections/rossiiskaya-plitka/idalgo/granite-stoun-kalakatta/keramika-budushchego-idalgo-granite-stoun-kalakatta-zhemchug-rett-keramogranit-polirovannaya-glazur-60х60 /collections/rossiiskaya-plitka/idalgo/granite-stoun-kalakatta/keramika-budushchego-idalgo-granite-stoun-kalakatta-zhemchug-rett-keramogranit-polirovannaya-glazur-60-60
+  Redirect 301 /collections/rossiiskaya-plitka/idalgo/granite-stoun-kalakatta/keramika-budushchego-idalgo-granite-stoun-kalakatta-shampan-rett-keramogranit-polirovannaya-glazur-60х60 /collections/rossiiskaya-plitka/idalgo/granite-stoun-kalakatta/keramika-budushchego-idalgo-granite-stoun-kalakatta-shampan-rett-keramogranit-polirovannaya-glazur-60-60
+  Redirect 301 /collections/rossiiskaya-plitka/idalgo/granite-stoun-kalakatta/keramika-budushchego-idalgo-granite-stoun-kalakatta-zhemchug-rett-keramogranit-legkoe-lappatirovanie-39-8х120 /collections/rossiiskaya-plitka/idalgo/granite-stoun-kalakatta/keramika-budushchego-idalgo-granite-stoun-kalakatta-zhemchug-rett-keramogranit-legkoe-lappatirovanie-39-8-120
+  Redirect 301 /collections/rossiiskaya-plitka/idalgo/granite-stoun-kalakatta/keramika-budushchego-idalgo-granite-stoun-kalakatta-shampan-rett-keramogranit-legkoe-lappatirovanie-39-8х120 /collections/rossiiskaya-plitka/idalgo/granite-stoun-kalakatta/keramika-budushchego-idalgo-granite-stoun-kalakatta-shampan-rett-keramogranit-legkoe-lappatirovanie-39-8-120
+  Redirect 301 /collections/rossiiskaya-plitka/idalgo/granite-stoun-kalakatta/keramika-budushchego-idalgo-granite-stoun-kalakatta-zhemchug-rett-keramogranit-legkoe-lappatirovanie-29-5х120 /collections/rossiiskaya-plitka/idalgo/granite-stoun-kalakatta/keramika-budushchego-idalgo-granite-stoun-kalakatta-zhemchug-rett-keramogranit-legkoe-lappatirovanie-29-5-120
+  Redirect 301 /collections/rossiiskaya-plitka/idalgo/granite-stoun-kalakatta/keramika-budushchego-idalgo-granite-stoun-kalakatta-shampan-rett-keramogranit-legkoe-lappatirovanie-29-5х120 /collections/rossiiskaya-plitka/idalgo/granite-stoun-kalakatta/keramika-budushchego-idalgo-granite-stoun-kalakatta-shampan-rett-keramogranit-legkoe-lappatirovanie-29-5-120
+  Redirect 301 /collections/rossiiskaya-plitka/idalgo/granite-stoun-kalakatta/keramika-budushchego-idalgo-granite-stoun-kalakatta-zhemchug-rett-keramogranit-legkoe-lappatirovanie-19-5х120 /collections/rossiiskaya-plitka/idalgo/granite-stoun-kalakatta/keramika-budushchego-idalgo-granite-stoun-kalakatta-zhemchug-rett-keramogranit-legkoe-lappatirovanie-19-5-120
+  Redirect 301 /collections/rossiiskaya-plitka/idalgo/granite-stoun-kalakatta/keramika-budushchego-idalgo-granite-stoun-kalakatta-shampan-rett-keramogranit-legkoe-lappatirovanie-19-5х120 /collections/rossiiskaya-plitka/idalgo/granite-stoun-kalakatta/keramika-budushchego-idalgo-granite-stoun-kalakatta-shampan-rett-keramogranit-legkoe-lappatirovanie-19-5-120
+  Redirect 301 /collections/rossiiskaya-plitka/idalgo/granite-stoun-oksido/keramika-budushchego-cf-systems-idalgo-granite-stoun-oksido-dekor-umbra-legkoe-lappatirovanie-llr-keramogranit-120х59-9 /collections/rossiiskaya-plitka/idalgo/granite-stoun-oksido/keramika-budushchego-cf-systems-idalgo-granite-stoun-oksido-dekor-umbra-legkoe-lappatirovanie-llr-keramogranit-120-59-9
+  Redirect 301 /collections/rossiiskaya-plitka/idalgo/granite-stoun-oksido/keramika-budushchego-cf-systems-idalgo-granite-stoun-oksido-umbra-legkoe-lappatirovanie-llr-keramogranit-120х59-9 /collections/rossiiskaya-plitka/idalgo/granite-stoun-oksido/keramika-budushchego-cf-systems-idalgo-granite-stoun-oksido-umbra-legkoe-lappatirovanie-llr-keramogranit-120-59-9
+  Redirect 301 /collections/rossiiskaya-plitka/idalgo/granite-stoun-tsement/keramika-budushchego-cf-systems-idalgo-granite-stoun-tsement-dekor-svetlo-bezhevyy-strukturnaya-sr-k-120х59-9 /collections/rossiiskaya-plitka/idalgo/granite-stoun-tsement/keramika-budushchego-cf-systems-idalgo-granite-stoun-tsement-dekor-svetlo-bezhevyy-strukturnaya-sr-k-120-59-9
+  Redirect 301 /collections/rossiiskaya-plitka/idalgo/granite-stoun-tsement/keramika-budushchego-cf-systems-idalgo-granite-stoun-tsement-svetlo-bezhevyy-strukturnaya-sr-keramog-120х59-9 /collections/rossiiskaya-plitka/idalgo/granite-stoun-tsement/keramika-budushchego-cf-systems-idalgo-granite-stoun-tsement-svetlo-bezhevyy-strukturnaya-sr-keramog-120-59-9
+  Redirect 301 /collections/rossiiskaya-plitka/idalgo/granite-gerda/keramika-budushchego-cf-systems-idalgo-granite-gerda-cherno-olivkovyy-lappatirovannaya-lr-keramogranit-59-9х59-9 /collections/rossiiskaya-plitka/idalgo/granite-gerda/keramika-budushchego-cf-systems-idalgo-granite-gerda-cherno-olivkovyy-lappatirovannaya-lr-keramogranit-59-9-59-9
+  Redirect 301 /collections/rossiiskaya-plitka/idalgo/granite-gerda/keramika-budushchego-cf-systems-idalgo-granite-gerda-cherno-olivkovyy-legkoe-lappatirovanie-llr-keramogranit-59-9х59-9 /collections/rossiiskaya-plitka/idalgo/granite-gerda/keramika-budushchego-cf-systems-idalgo-granite-gerda-cherno-olivkovyy-legkoe-lappatirovanie-llr-keramogranit-59-9-59-9
+  Redirect 301 /collections/rossiiskaya-plitka/idalgo/granite-bardilo/keramika-budushchego-cf-systems-idalgo-granite-bardilo-klassik-sr-bezhevyy-strukturirovannyy-keramogranit-59-9х59-9 /collections/rossiiskaya-plitka/idalgo/granite-bardilo/keramika-budushchego-cf-systems-idalgo-granite-bardilo-klassik-sr-bezhevyy-strukturirovannyy-keramogranit-59-9-59-9
+  Redirect 301 /collections/rossiiskaya-plitka/idalgo/granite-bardilo/keramika-budushchego-cf-systems-idalgo-granite-bardilo-klassik-llr-bezhevyy-lappatirovannyy-keramogranit-59-9х59-9 /collections/rossiiskaya-plitka/idalgo/granite-bardilo/keramika-budushchego-cf-systems-idalgo-granite-bardilo-klassik-llr-bezhevyy-lappatirovannyy-keramogranit-59-9-59-9
+  Redirect 301 /collections/rossiiskaya-plitka/idalgo/granite-perla/keramika-budushchego-cf-systems-idalgo-granite-perla-svetlo-seryy-legkoe-lappatirovanie-llr-keramogranit-59-9х59-9 /collections/rossiiskaya-plitka/idalgo/granite-perla/keramika-budushchego-cf-systems-idalgo-granite-perla-svetlo-seryy-legkoe-lappatirovanie-llr-keramogranit-59-9-59-9
+  Redirect 301 /collections/rossiiskaya-plitka/idalgo/granite-perla/keramika-budushchego-cf-systems-idalgo-granite-perla-korichnevyy-legkoe-lappatirovanie-llr-keramogranit-59-9х59-9 /collections/rossiiskaya-plitka/idalgo/granite-perla/keramika-budushchego-cf-systems-idalgo-granite-perla-korichnevyy-legkoe-lappatirovanie-llr-keramogranit-59-9-59-9
+  Redirect 301 /collections/rossiiskaya-plitka/idalgo/granite-oniks/keramika-budushchego-cf-systems-idalgo-granite-oniks-azuro-llr-seryy-polupolirovannyy-keramogranit-59-9х59-9 /collections/rossiiskaya-plitka/idalgo/granite-oniks/keramika-budushchego-cf-systems-idalgo-granite-oniks-azuro-llr-seryy-polupolirovannyy-keramogranit-59-9-59-9
+  Redirect 301 /collections/rossiiskaya-plitka/idalgo/granite-oniks/keramika-budushchego-cf-systems-idalgo-granite-oniks-oro-llr-bezhevyy-polupolirovannyy-keramogranit-59-9х59-9 /collections/rossiiskaya-plitka/idalgo/granite-oniks/keramika-budushchego-cf-systems-idalgo-granite-oniks-oro-llr-bezhevyy-polupolirovannyy-keramogranit-59-9-59-9
+  Redirect 301 /collections/rossiiskaya-plitka/idalgo/granite-oniks/keramika-budushchego-cf-systems-idalgo-granite-oniks-perla-llr-bezhevyy-polupolirovannyy-keramogranit-59-9х59-9 /collections/rossiiskaya-plitka/idalgo/granite-oniks/keramika-budushchego-cf-systems-idalgo-granite-oniks-perla-llr-bezhevyy-polupolirovannyy-keramogranit-59-9-59-9
+  Redirect 301 /collections/rossiiskaya-plitka/idalgo/granite-oniks/keramika-budushchego-cf-systems-idalgo-granite-oniks-korichnevyy-legkoe-lappatirovanie-llr-keramogranit-59-9х59-9 /collections/rossiiskaya-plitka/idalgo/granite-oniks/keramika-budushchego-cf-systems-idalgo-granite-oniks-korichnevyy-legkoe-lappatirovanie-llr-keramogranit-59-9-59-9
+
+  
+ # Redirect 410 /napolnye-pokrytiya/podlozhka/quick-step/quick-step-podlozhka-basic-3-mm-
+ # Redirect 410 /collections/ispanskaya-plitka/argenta-ceramica/domo/argenta-ceramica-domo-black-nastennaya-mozaichnaya-plitka-25kh40171603
+ # Redirect 410 /collections/ispanskaya-plitka/argenta-ceramica/domo/argenta-ceramica-domo-red-nastennaya-mozaichnaya-plitka-25kh40171605
+ # Redirect 410 /collections/ispanskaya-plitka/azteca-ceramica/iris/azteca-ceramica-iris-decor-2-apple-beige-dekor-iz-2-kh-shtuk-66-6x46164253
+ # Redirect 410 /collections/ispanskaya-plitka/el-barco/oldie-eden/el-barco-oldie-eden-arena-nastennaya-plitka-20x20137563
+ # Redirect 410 /collections/ispanskaya-plitka/el-barco/oldie-eden/el-barco-oldie-eden-hueso-nastennaya-plitka-20x20137566
+ # Redirect 410 /collections/ispanskaya-plitka/gaya-fores/opera/gaya-fores-opera-coral-listelo-bordyur-3kh32-6136386
+ # Redirect 410 /collections/ispanskaya-plitka/glazurker/catalonia/glazurker-catalonia-frame-yellow-bordyur-2x20145433
+ # Redirect 410 /collections/ispanskaya-plitka/plaza/marbre/plaza-marbre-rojo-napolnaya-plitka-45kh45176088
+ # Redirect 410 /collections/italyanskaya-plitka/paul-ceramiche/vanity/paul-ceramiche-vanity-pva402-inserto-glitter-artic-dekor-20x40162738
+ # Redirect 410 /collections/polskaya-plitka/cerrad/jaspis/cerrad-jaspis-kamen-fasad-nastennaya-plitka-30kh14-8145457
+ # Redirect 410 /collections/polskaya-plitka/cerrad/nefryt/cerrad-nefryt-kamen-fasad-nastennaya-plitka-30kh14-8145459
+ # Redirect 410 /collections/polskaya-plitka/paradyz/osaka/osaka-ochra-kwiat-dekor-25kh40121209
+ # Redirect 410 /collections/rossiiskaya-plitka/kerama-marazzi/berkana/kerama-marazzi-berkana-bordyur-bc75-8165-20kh5-7138474
+ # Redirect 410 /collections/rossiiskaya-plitka/kerama-marazzi/brash-vud/kerama-maratstsi-brash-vud-sg401200n-keramogranit-korichnevyy-9-9kh40-2-
+ # Redirect 410 /collections/rossiiskaya-plitka/kerama-marazzi/rio/rio-bordyur-v1231-6124-40kh6122932
+ # Redirect 410 /collections/turetskaya-plitka/kalebodur/bassein/kalebodur-basseyn-17782904-relefnaya-plitka-neglazurovannaya-12x24-5137492
+ # Redirect 410 /collections/ukrainskaya-plitka/golden-tile/lyuchiya/lyuchiya-goluboy-nastennaya-keramicheskaya-plitka-25kh40125898
+ # Redirect 410 /collections/polskaya-plitka/opoczno/matta/matta-orange-stone-bordyur-25kh6121467
+ # Redirect 410 /collections/polskaya-plitka/paradyz/santera/paradyz-santera-beige-bordyur-7-2x45130954
+ # Redirect 410 /collections/portugalskaya-plitka/love-ceramic/plaza/love-ceramic-plaza-decor-shine-mosaico-17-4x17-4165459
+  
+  #RewriteCond %{REQUEST_URI} collections/keramogranit/$
+  RewriteRule ^collections/keramogranit/$ /collections/keramogranit [L,R=301]
+  
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-l
+  RewriteCond %{REQUEST_FILENAME} !-d
+
+
+  RewriteCond %{REQUEST_FILENAME} !/bitrix/urlrewrite.php$
+  RewriteRule ^(.*)$ /bitrix/urlrewrite.php [L]
+  RewriteRule .* - [E=REMOTE_USER:%{HTTP:Authorization}]
+</IfModule>
+
+<FilesMatch ".(log|json)$">
+	deny from all
+</FilesMatch>
+
+<Files manifest.json>
+	Allow from all
+</Files>
+
+<IfModule mod_dir.c>
+  DirectoryIndex index.php index.html
+</IfModule>
+
+<IfModule mod_expires.c>
+  ExpiresActive on
+  ExpiresByType image/jpeg "access plus 3 day"
+  ExpiresByType image/gif "access plus 3 day"
+  ExpiresByType image/png "access plus 3 day"
+  ExpiresByType text/css "access plus 3 day"
+  ExpiresByType application/javascript "access plus 3 day"
+</IfModule>
+
+
+
+#RewriteRule ^(.*).php$ $1.php/ [QSA] rule:
+
+#RewriteCond %{THE_REQUEST} \ /(.+)\.php/
+#RewriteRule ^ /%1.php [L,R=301]
+
+  #delete / url

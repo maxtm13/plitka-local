@@ -1,0 +1,61 @@
+
+.promo__list {
+}
+
+.promo__item {
+    border: 1px solid #e8e7e7;
+    float: left;
+    padding: 7px;
+    display: inline;
+    width: 260px;
+    margin: 5px;
+    min-height: 300px;
+}
+
+.promo__pict {}
+
+.promo__img {
+    height: 150px;
+    width: 260px;
+}
+
+.promo__end {
+    border: 1px solid #e8e7e7;
+    width: 28%;
+    float: left;
+    display: inline;
+    clear: left;
+}
+.promo__end span {
+    display: block;
+    font-size: 11px;
+    color: #666;
+    text-align: center;
+    margin-bottom: 2px;
+}
+.promo__cal {}
+
+.promo__end-day {
+    font-size: 24px;
+    color: #333;
+    font-weight: 700;
+    text-align: center;
+}
+
+.promo__desc {
+    width: 64%;
+    margin-left: 3%;
+    float: right;
+    display: inline;
+}
+
+.promo__actto {
+    font-size: 13px;
+    color: #999;
+    word-wrap: break-word;
+    text-align: left;
+}
+
+.promo__title {
+    word-wrap: break-word;
+}
