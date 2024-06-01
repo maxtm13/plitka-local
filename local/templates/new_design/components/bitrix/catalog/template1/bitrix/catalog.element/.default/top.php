@@ -303,7 +303,7 @@ if (!empty($arResult['DISPLAY_PROPERTIES']['AVAILABILITY']['VALUE_ENUM_ID']) && 
                         }
                         $sqr = $itemSize[0] * $itemSize[1]; //площадь ?>
                         <div class="calc-measures" data-inpt="<? echo $arItemIDs['QUANTITY']; ?>" data-w="<?php echo $itemSize[0]; ?>" data-h="<?php echo $itemSize[1]; ?>" data-sqr="<?php echo round($sqr * 10000) / 10000; ?>" data-pac="<?php echo $dataPac; ?>">
-                            <a <?if ($arResult['CATALOG_MEASURE_NAME'] == 'кв. м.'):?>class="active"<?endif?> href="javascript:void(0)" data-unit="m" id="calculatePric1"> кв. м.</a>
+                            <a <?if ($arResult['CATALOG_MEASURE_NAME'] == 'кв. м.'):?>class="active"<?endif?> href="javascript:void(0)" data-unit="m" id="calculatePric1"> м<sup>2</sup> </a>
                             <?if ($arParams['IBLOCK_ID'] == CATALOG_ID) {?>
                                 <a <?if ($arResult['CATALOG_MEASURE_NAME'] == 'шт.'):?>class="active"<?endif?> href="javascript:void(0)" data-unit="i" id="calculatePrice"> шт.</a>
                             <?}?>

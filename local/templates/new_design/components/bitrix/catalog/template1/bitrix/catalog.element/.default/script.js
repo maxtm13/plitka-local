@@ -2117,6 +2117,12 @@ jQuery(document).ready(function() {
 });
 /*---end 2017-04-14---*/
 
+// разделение числа по разоядам
+function numberWithSpaces(x) {
+	var parts = x.toString().split(".");
+	parts[0] = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, " ");
+	return parts.join(".");
+}
 jQuery(document).ready(function() {
 	var oldprice=jQuery('.new-price').html();
 	var newprice=jQuery('#cena').html();
@@ -2136,9 +2142,9 @@ jQuery(document).ready(function() {
 		//console.log(kef);
 
 		if (startTypeUnit === 'i')
-			newprice1 = Math.round(newprice * 100) / 100;
+			newprice1 = numberWithSpaces(Math.round(newprice * 100) / 100);
 		else
-			newprice1 = Math.round(newprice * kef * 100) / 100;
+			newprice1 = numberWithSpaces(Math.round(newprice * kef * 100) / 100);
 
 		jQuery('.new-price').html(newprice1+' <span class="new-ci">руб./шт</span>');
 		jQuery('.item_price>.new-ci').html('');
@@ -2199,10 +2205,10 @@ jQuery(document).ready(function() {
 		//}
 		//var kolvo = jQuery('#unit-quantity').val();
 		if (startTypeUnit === 'i')
-			newprice1 = Math.round(newprice / sqr * 100) / 100;	
+			newprice1 = Math.round(newprice / sqr * 100) / 100;
 		else
 			newprice1 = Math.round(newprice * 100) / 100;
-
+		newprice1 = numberWithSpaces(newprice1); //разделение на разряды
 		jQuery('.new-price').html(newprice1+' <span class="new-ci">руб./кв. м.</span>');
 		jQuery('.item_price>.new-ci').html('');
 		jQuery('#testizm').html('кв.м.');

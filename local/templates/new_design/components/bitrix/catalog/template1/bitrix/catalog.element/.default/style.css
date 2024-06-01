@@ -101,7 +101,9 @@
 	width: 77px;
 	box-sizing: border-box;
 	text-align: center;
-	text-decoration: none; }
+	text-decoration: none;
+	transition: border 0.3s;
+}
 
 .calc-measures a:hover {
 	border: 1px solid #FF8A00;

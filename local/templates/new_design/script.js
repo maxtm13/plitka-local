@@ -67,6 +67,7 @@ function rem(ele) {
 	jQuery(ele).parent().remove();
 }
 
+
 //пересчёт единиц измерения
 function recalcUnits($obj, $startTypeUnit) {
 	if (jQuery('.calc-measures').length > 0) {
@@ -96,6 +97,7 @@ function recalcUnits($obj, $startTypeUnit) {
 					$newVal = $newVal * $pac;
 				}
 				$newVal = parseInt($newVal * $decimal, 10) / $decimal; //берём только 4-е знака после запятой, без округления
+				$newVal = numberWithSpaces($newVal);
 				jQuery('#unit-quantity').val($newVal);
 				jQuery($inpt).val($newVal);
 			} else if ($curUnit == 'i') {
@@ -158,6 +160,7 @@ function recalcUnitsInList($obj, $key, $startTypeUnit) {
 		$inpt = '#' + jQuery($cm_cls).attr('data-inpt');
 		$curVal = jQuery($uq_cls).val();
 		$sqr = parseFloat(jQuery($cm_cls).attr('data-sqr'));
+		console.log($sqr);
 		$pac = parseInt(jQuery($cm_cls).attr('data-pac'));
 		if (typeof ($obj) == 'object' && !jQuery($obj).hasClass('active')) {
 			//щёлкнули не по активной единице
