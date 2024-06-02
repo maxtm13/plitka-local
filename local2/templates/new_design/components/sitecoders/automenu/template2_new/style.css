@@ -1,0 +1,195 @@
+ul#vertical-multilevel-menu, #vertical-multilevel-menu ul
+{
+	margin: 0; 
+	padding: 0; 
+	list-style: none; 
+	width: 222px;
+	font-size:12px;
+}
+ul#vertical-multilevel-menu > li{
+	float: left;
+	margin-right: 10px;
+}
+ul#vertical-multilevel-menu > li:after{
+	content: '';
+	display: block;
+	clear: both;
+}
+ul#vertical-multilevel-menu {
+  padding-top: 15px;
+  width: auto;
+}
+
+/*Submenu box*/
+#vertical-multilevel-menu li ul
+{
+	position:absolute;
+	/*top:-999em;*/
+	top:auto;
+	display:none;
+	z-index:1500;
+	height:auto;
+	border:1px solid #FBC989;
+	border-bottom:none;
+}
+
+/* Submenu Items */ 
+#vertical-multilevel-menu li a
+{ 
+	display: block; 
+	text-decoration: none; 
+	color: #000000; 
+	font-weight:normal;
+  font-size: 1.1em;
+  padding: 5px;
+  background: #FFE691;
+  border-bottom: 1px solid #FBC989;
+}
+
+/*Items selected*/
+#vertical-multilevel-menu li a.item-selected
+{ 
+	background-color: #FEC41D;
+}
+
+/*Items Hover */
+#vertical-multilevel-menu li a:hover
+{
+	background-color: #F69A03;
+} 
+
+/*Rootmenu Items*/
+@-webkit-keyframes pulsate {
+ 50% { color: #fff; text-shadow: 0 -1px rgba(0,0,0,.3), 0 0 5px #ffd, 0 0 8px #fff; }
+}
+@keyframes pulsate {
+ 50% { color: #fff; text-shadow: 0 -1px rgba(0,0,0,.3), 0 0 5px #ffd, 0 0 8px #fff; }
+}
+#vertical-multilevel-menu a.root-item, #vertical-multilevel-menu a.root-item-selected
+{
+	color:#fff;
+	font-weight:normal;
+	font-size:18px;
+	padding:5px 0 7px 35px;
+	background: none;
+	border:none;
+	box-sizing:border-box;
+	-moz-box-sizing:border-box;
+	-webkit-animation: pulsate 1.2s linear infinite;
+  animation: pulsate 1.2s linear infinite;
+	/*height:26px;
+	overflow:hidden;*/
+  text-decoration: underline;
+  text-transform: uppercase;
+  position: relative;
+}
+
+/*Rootmenu Items hover*/
+#vertical-multilevel-menu a.root-item:hover, #vertical-multilevel-menu a.root-item-selected:hover
+{
+  background: none;
+	/*background:#61656A url(images/item_bg.gif) 0 -26px no-repeat;*/
+}
+
+/*Rootmenu Items Selected*/
+/*#vertical-multilevel-menu a.root-item-selected
+{
+	color:#fff;
+	font-weight:bold;
+	font-size:12px;
+	padding:5px 0 7px 35px;
+	background:#61656A url(images/item_bg.gif) 0 -26px no-repeat;
+	border:none;
+	box-sizing:border-box;
+	-moz-box-sizing:border-box;
+	/*height:26px;
+	overflow:hidden;*/
+}
+*/
+/*Parent item*/
+#vertical-multilevel-menu a.parent
+{
+	background: #F5F5F5 url(images/arrow.gif) center right no-repeat;
+	padding-right:10px;
+}
+
+/*Denied items*/
+#vertical-multilevel-menu a.denied
+{
+	background: #F5F5F5 url(images/lock.gif) center right no-repeat;
+	color:#DDDDDD;
+	padding-right:10px;
+}
+
+/* Holly Hack. IE Requirement \*/ 
+* html ul#vertical-multilevel-menu li { float: left; height: 1%; } 
+* html ul#vertical-multilevel-menu li a { height: 1%; } 
+/* End */ 
+
+
+/*Submenu margin*/
+#vertical-multilevel-menu li ul.root-item
+{
+	margin:-77px 0 0 210px;
+}
+
+#vertical-multilevel-menu li ul
+{
+	margin:-77px 0 0 210px;
+}
+
+/*Submenu hide*/
+#vertical-multilevel-menu li:hover ul ul,
+#vertical-multilevel-menu li.jsvhover ul ul,
+#vertical-multilevel-menu li:hover ul ul ul,
+#vertical-multilevel-menu li.jsvhover ul ul ul 
+{
+	/*top:-999em;*/
+	display:none;
+}
+
+/*Submenu show*/
+#vertical-multilevel-menu li:hover ul,
+#vertical-multilevel-menu li.jsvhover ul,
+#vertical-multilevel-menu li li:hover ul,
+#vertical-multilevel-menu li li.jsvhover ul,
+#vertical-multilevel-menu li li li:hover ul,
+#vertical-multilevel-menu li li li.jsvhover ul
+{
+	/*z-index:1000;
+	top:auto;*/
+	display:block;
+}
+
+
+.sub-wrapper-2 {
+  width: 650px;
+}
+
+li.depth-3 {
+  float: left;
+  width: 214px;
+}
+#vertical-multilevel-menu li.depth-2 ul {
+  border-top: none;
+  border-right: none;
+  padding-top: 50px;
+  padding-right: 450px;
+  padding-bottom: 50px;
+}
+
+/* floor */
+.floor .sub-wrapper-2{
+	width: 222px;
+}
+.floor li.depth-3{
+	width: 222px;
+	float: none;
+}
+.sub-wrapper-3{
+	width: 500px;
+}
+.sub-wrapper-3 li.depth-4{
+	width: 165px;
+	float: left;
+}

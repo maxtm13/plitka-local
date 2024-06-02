@@ -117,13 +117,6 @@ foreach ($arResult['SECTIONS'] as $key => &$arSection){
 unset($arSection);
 
 
-
-if ($USER->isAdmin()) {
-	echo "<pre>123123";
-	print_r($arPathSection);
-	echo "</pre>";
-}
-
 //устанавливаем в хлебных крошках для разделов название раздела
 foreach($arResult['SECTION']['PATH'] as &$arPathSection) {
     $arPathSection['IPROPERTY_VALUES']['SECTION_PAGE_TITLE'] = $arPathSection['NAME'];

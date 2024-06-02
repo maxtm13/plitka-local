@@ -16,7 +16,6 @@ $allmainpages = [
 	"/sukhie-stroitelnye-smesi/"
 ];
 ?>
-<script src="https://yastatic.net/share2/share.js"></script>
 <!DOCTYPE html>
 <html lang="<?= LANGUAGE_ID ?>">
 
@@ -36,12 +35,12 @@ $allmainpages = [
 	<meta property="og:locale" content="ru_RU" >
 	<meta property="og:site_name" content="plitkanadom.ru" />
 	
-	<link rel="apple-touch-icon" sizes="180x180" href="/local/templates/new_design/icons/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/local/templates/new_design/icons/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/local/templates/new_design/icons/favicon-16x16.png">
-    <link rel="manifest" href="/local/templates/new_design/icons/site.webmanifest">
-    <link rel="mask-icon" href="/local/templates/new_design/icons/safari-pinned-tab.svg" color="#000000">
-    <link rel="shortcut icon" href="/local/templates/new_design/icons/favicon.ico">
+	<link rel="apple-touch-icon" sizes="180x180" href="/local2/templates/new_design/icons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/local2/templates/new_design/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/local2/templates/new_design/icons/favicon-16x16.png">
+    <link rel="manifest" href="/local2/templates/new_design/icons/site.webmanifest">
+    <link rel="mask-icon" href="/local2/templates/new_design/icons/safari-pinned-tab.svg" color="#000000">
+    <link rel="shortcut icon" href="/local2/templates/new_design/icons/favicon.ico">
     <meta name="msapplication-TileColor" content="#000000">
     <meta name="msapplication-config" content="/local/templates/new_design/icons/browserconfig.xml">
     <meta name="theme-color" content="#ffffff">
@@ -125,44 +124,44 @@ $allmainpages = [
     <!-- calltouch -->
 <? if(!$USER->IsAdmin()):?>
 	<!-- Google Tag Manager -->
-<!--    <script data-skip-moving="true">-->
-<!--        (function (w, d, s, l, i) {-->
-<!--            w[l] = w[l] || [];-->
-<!--            w[l].push({-->
-<!--                'gtm.start': new Date().getTime(),-->
-<!--                event: 'gtm.js'-->
-<!--            });-->
-<!--            var f = d.getElementsByTagName(s)[0],-->
-<!--                j = d.createElement(s),-->
-<!--                dl = l != 'dataLayer' ? '&l=' + l : '';-->
-<!--            j.async = true;-->
-<!--            j.src =-->
-<!--                'https://www.googletagmanager.com/gtm.js?id=' + i + dl;-->
-<!--            f.parentNode.insertBefore(j, f);-->
-<!--        })(window, document, 'script', 'dataLayer', 'GTM-MKTP88P');-->
-<!--    </script>-->
+    <script data-skip-moving="true">
+        (function (w, d, s, l, i) {
+            w[l] = w[l] || [];
+            w[l].push({
+                'gtm.start': new Date().getTime(),
+                event: 'gtm.js'
+            });
+            var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s),
+                dl = l != 'dataLayer' ? '&l=' + l : '';
+            j.async = true;
+            j.src =
+                'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+            f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-MKTP88P');
+    </script>
     <!-- End Google Tag Manager -->
 
 	<!-- Yandex.Metrika counter -->
-<!--	<script type="text/javascript" >-->
-<!--	(function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};-->
-<!--	m[i].l=1*new Date();-->
-<!--	for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}-->
-<!--	k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})-->
-<!--	(window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");-->
-<!---->
-<!--	ym(24968570, "init", {-->
-<!--		clickmap:true,-->
-<!--		trackLinks:true,-->
-<!--		accurateTrackBounce:true,-->
-<!--		webvisor:true,-->
-<!--		ecommerce:"dataLayer"-->
-<!--	});-->
-<!--	</script>-->
-<!--	<noscript><div><img src="https://mc.yandex.ru/watch/24968570" style="position:absolute; left:-9999px;" alt="" /></div></noscript>-->
+	<script type="text/javascript" >
+	(function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+	m[i].l=1*new Date();
+	for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+	k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+	(window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+	ym(24968570, "init", {
+		clickmap:true,
+		trackLinks:true,
+		accurateTrackBounce:true,
+		webvisor:true,
+		ecommerce:"dataLayer"
+	});
+	</script>
+	<noscript><div><img src="https://mc.yandex.ru/watch/24968570" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
 	<!-- /Yandex.Metrika counter -->
 	<? endif; ?>
-<!--    <meta name="yandex-verification" content="fb8ee7760b445179"/>-->
+    <meta name="yandex-verification" content="fb8ee7760b445179"/>
 
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -175,35 +174,35 @@ $allmainpages = [
 <? endif; ?>
 <? if(!$USER->IsAdmin()):?>
 <!-- Google Tag Manager (noscript) -->
-<!--<noscript>-->
-<!--    <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MKTP88P" height="0" width="0"-->
-<!--            style="display:none;visibility:hidden"></iframe>-->
-<!--</noscript>-->
+<noscript>
+    <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MKTP88P" height="0" width="0"
+            style="display:none;visibility:hidden"></iframe>
+</noscript>
 <!-- End Google Tag Manager (noscript) -->
 
     <!-- Google Tag Manager (noscript) -->
-<!--    <noscript>-->
-<!--        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MKTP88P" height="0" width="0"-->
-<!--                style="display:none;visibility:hidden"></iframe>-->
-<!--    </noscript>-->
+    <noscript>
+        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MKTP88P" height="0" width="0"
+                style="display:none;visibility:hidden"></iframe>
+    </noscript>
     <!-- End Google Tag Manager (noscript) -->
     <!-- Yandex.Metrika counter -->
-<!--    <script type="text/javascript" >-->
-<!--        (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};-->
-<!--        m[i].l=1*new Date();-->
-<!--        for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}-->
-<!--        k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})-->
-<!--        (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");-->
-<!---->
-<!--        ym(24968570, "init", {-->
-<!--            clickmap:true,-->
-<!--            trackLinks:true,-->
-<!--            accurateTrackBounce:true,-->
-<!--            webvisor:true,-->
-<!--            ecommerce:"dataLayer"-->
-<!--        });-->
-<!--    </script>-->
-<!--    <noscript><div><img src="https://mc.yandex.ru/watch/24968570" style="position:absolute; left:-9999px;" alt="" /></div></noscript>-->
+    <script type="text/javascript" >
+        (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+        m[i].l=1*new Date();
+        for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+        k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+        (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+        ym(24968570, "init", {
+            clickmap:true,
+            trackLinks:true,
+            accurateTrackBounce:true,
+            webvisor:true,
+            ecommerce:"dataLayer"
+        });
+    </script>
+    <noscript><div><img src="https://mc.yandex.ru/watch/24968570" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
     <!-- /Yandex.Metrika counter -->
 <? endif; ?>
 	<div class="wrapper">
@@ -284,7 +283,7 @@ $allmainpages = [
 				</div>
 				<div class="is-head__basket" id="is-basket">
 					<a href="/personal/cart/" class="bx_cart_block">
-						<div class="is-icon__block"><img src="/local/templates/new_design/svg/basket.svg" alt="Корзина" /></div>
+						<div class="is-icon__block"><img src="/local2/templates/new_design/svg/basket.svg" alt="Корзина" /></div>
 						<div class="bx_small_cart"></div>
 					</a>
 				</div>

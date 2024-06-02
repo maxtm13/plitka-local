@@ -1,0 +1,66 @@
+.is-goods__slider { position: relative; margin: 0 0 50px; font-size: 0; letter-spacing: 0; overflow: hidden;}
+.is-goods__slider.no-margin { margin-bottom: 0; }
+.is-goods__title { position: relative; font-size: 20px; color: #000; font-weight: 500; padding: 12px 0 22px; margin-bottom: 25px; border-bottom: solid 2px #e0e0e0; }
+.is-goods__title:before , .is-goods__title:after { content: ''; position: absolute; bottom: -7px; width: 14px; height: 14px; background: url("/image/new_design/plus.png") center no-repeat; }
+.is-goods__title:after { right: 0; }
+
+.is-goods__list { position: relative; overflow: hidden; }
+
+.is-goods__block { width: 292px; vertical-align: top; display: inline-block; box-sizing: border-box; margin: 10px 0 10px 20px; }
+.is-goods__block:first-child { margin-left: 3px; }
+.is-goods__block a { 
+	position: relative; 
+	display: block; 
+	cursor: pointer; 
+	text-decoration: none; 
+	color: #000; 
+	border: solid 1px #e0e0e0;
+	box-sizing: border-box; 
+	background: #fff; 
+	text-align: center; 
+}
+.is-goods__block a:hover { 
+	border: solid 1px #ff8a00;
+}
+
+.is-goods__block .is-height { display: inline-block; width: 0; height: 290px; vertical-align: middle; }
+.is-goods__block .is-img { display: inline-block; vertical-align: middle; max-height: 290px; max-width: 290px; }
+.is-goods__block .is-img.po-shirine , .is-goods__block .is-img.kvadrat { width: 290px; height: auto; max-width: 100%; }
+.is-goods__block .is-img.po-visote { width: auto; height: 290px; max-height: 100%; }
+
+.is-goods__block .is-goods__name { font-size: 13px; font-weight: 500; text-transform: none; margin: 10px; display: block; height: 66px; position: relative; box-sizing: border-box; overflow: hidden; text-align: left; }
+.is-goods__block .is-goods__price { font-size: 17px; font-weight: 600; text-transform: none; margin: 0 10px; display: block; height: 54px; line-height: 54px; position: relative; box-sizing: border-box; overflow: hidden; text-align: left; }
+.is-goods__price-old { position: absolute; margin-top: -22px; font-size: 13px; text-decoration: line-through; color: #333; }
+.is-quanty__type { font-size: 13px; }
+.is-goods__basket { position: absolute; width: 80px; height: 40px; cursor: pointer; font-weight: 600; color: #fff; font-size: 17px; text-align: right; padding: 0; z-index: 20; margin: -58px 0 0 190px; box-sizing: border-box; background-color: #ff8a00; background-position: 50%; background-repeat: no-repeat; background-size: 24px; background-image: url("data:image/svg+xml,%3Csvg width='33' height='33' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 33.65 32.78'%3E%3Cpath fill='%23ffffff' d='M31.35 23.28H6.62a1 1 0 1 1 0-2H31.35v-2H6.62a3 3 0 1 0 0 6H31.35Z'/%3E%3Crect fill='%23ffffff' x='6.01' y='5.54' width='27.63' height='1.34'/%3E%3Crect fill='%23ffffff' x='1.01' y='12.78' width='13.58' height='1.34' transform='translate(19.76 3.51) rotate(80.34)'/%3E%3Crect fill='%23ffffff' x='25.03' y='12.78' width='13.58' height='1.34' transform='translate(50.42 -15.66) rotate(99.66)'/%3E%3Cpath fill='%23ffffff' d='M12.35 27.32a1.73 1.73 0 1 1-1.83 1.73 1.79 1.79 0 0 1 1.83-1.73m0-2a3.73 3.73 0 1 0 3.84 3.73 3.78 3.78 0 0 0-3.84-3.73Z'/%3E%3Cpath fill='%23ffffff' d='M26.35 27.32a1.73 1.73 0 1 1-1.83 1.73 1.79 1.79 0 0 1 1.83-1.73m0-2a3.73 3.73 0 1 0 3.84 3.73 3.78 3.78 0 0 0-3.84-3.73Z'/%3E%3Cpath fill='%23ffffff' d='M1 0H0V2H1A5 5 0 0 1 6 6.72l.27 0H8A7.05 7.05 0 0 0 1 0Z'/%3E%3C/svg%3E"); }
+.is-goods__basket:hover { background-color: #000; }
+
+.stiker { position: absolute; right:10px; top: 210px; padding: 5px 10px; box-sizing: border-box; z-index: 20; box-shadow: 2px 2px 4px rgba(0,0,0,0.4); }
+.stiker.skidka { background: #ff8a00; color: #fff; padding: 0; font-size: 18px; font-weight: 600; width: 70px; height: 70px; line-height: 70px; text-align: center; letter-spacing: 1px; border-radius: 50%; }
+.stiker.skidka:before { content: ''; position: absolute; width: 64px; height: 64px; border: dotted 2px #fff; left: 3px; top: 3px; border-radius: 50%; box-sizing: border-box; }
+.stiker.isnew { background: #13d81d; color: #fff; font-size: 12px; font-weight: 600; top: 10px; }
+.stiker.isdelivery { right: -4px; top: -4px; font-size: 12px; background: #ff8a00; color: #fff; }
+.stiker.isdeliverysale { right: -4px; top: -4px; font-size: 12px; background: #ff8a00; color: #fff; text-align: right; }
+
+/****/
+.is-goods__list .slick-prev , .is-goods__list .slick-next { z-index: 20; width: 40px; height: 40px; border: none; font-size: 0; background: none; position: absolute; top: 50%; margin-top: -40px; }
+.is-goods__list .slick-prev:before , .is-goods__list .slick-next:before { content: ''; display: block; position: absolute; width: 100%; height:100%; left: 0; top: 0; z-index: 2; opacity: 1; }
+.is-goods__list .slick-prev:before { background: url(/image/new_design/arrow_prev.png) center no-repeat; background-size: 100%; }
+.is-goods__list .slick-next:before { background: url(/image/new_design/arrow_next.png) center no-repeat; background-size: 100%; }
+.is-goods__list .slick-prev { left: 0; }
+.is-goods__list .slick-next { right: 0!important; }
+
+.is-goods__list .slick-prev:after , .is-goods__list .slick-next:after { content: ''; display: block; position: absolute; width: 20px; height: 20px; left: 50%; top: 50%; margin: -10px 0 0 -10px; background-color: #fff; z-index: 1; }
+.is-goods__list .slick-prev:hover:after , .is-goods__list .slick-next:hover:after { background-color: #333; }
+
+.slick-disabled { cursor: default; opacity: 0.7; }
+.is-goods__list .slick-prev.slick-disabled:after, .is-goods__list .slick-next.slick-disabled:after { display: none; }
+/**/
+.is-goods__list .slick-dots { bottom: 0; }
+.is-goods__list .slick-dots li button { width: 8px; height: 8px; background-color: #fff; border: solid 1px #ff8a00; overflow: hidden; border-radius: 5px; padding: 0; font-size: 0; }
+.is-goods__list .slick-dots li button:hover , .is-goods__list .slick-dots li.slick-active button  { width: 14px; height: 8px; background-color: #ff8a00; overflow: hidden; border-radius: 5px; padding: 0; margin-left: -3px; }
+
+
+@media (max-width: 768px){
+	.is-news .is-goods { margin-top:0; }
+}

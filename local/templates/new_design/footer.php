@@ -163,36 +163,33 @@ global $checkdate, $usergropus, $checktime, $dir, $ccurency;
 	</div>
 <? if(!$USER->IsAdmin()):?>
 	<? if (strpos($_SERVER['HTTP_USER_AGENT'], 'Speed Insights') !== FALSE): ?>
-<!--LiveInternet counter-->
-        <script async type="text/javascript">
-    // document.write("<a href='//www.liveinternet.ru/click' rel = 'nofollow'"+
-    //     "target=_blank><img src='//counter.yadro.ru/hit?t44.2;r"+
-    //     escape(document.referrer)+((typeof(screen)=="undefined")?"":
-    //         ";s"+screen.width+"*"+screen.height+"*"+(screen.colorDepth?
-    //         screen.colorDepth:screen.pixelDepth))+";u"+escape(document.URL)+
-    //     ";"+Math.random()+
-    //     "' alt='LiveInternet' title='LiveInternet' "+
-    //     "border='0' width='31' height='31' style = 'margin-top: 10px;display: none;'><\/a>")
-    </script>
-
-        <!--/LiveInternet-->
+<!--LiveInternet counter--><script async type="text/javascript"><!--
+    document.write("<a href='//www.liveinternet.ru/click' rel = 'nofollow'"+
+        "target=_blank><img src='//counter.yadro.ru/hit?t44.2;r"+
+        escape(document.referrer)+((typeof(screen)=="undefined")?"":
+            ";s"+screen.width+"*"+screen.height+"*"+(screen.colorDepth?
+            screen.colorDepth:screen.pixelDepth))+";u"+escape(document.URL)+
+        ";"+Math.random()+
+        "' alt='LiveInternet' title='LiveInternet' "+
+        "border='0' width='31' height='31' style = 'margin-top: 10px;display: none;'><\/a>")
+    //--></script><!--/LiveInternet-->
 <!-- Yandex.Metrika counter -->
 <script type="text/javascript" >
-   // (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
-   // m[i].l=1*new Date();
-   // for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
-   // k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
-   // (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
-   //
-   // ym(24968570, "init", {
-   //      clickmap:true,
-   //      trackLinks:true,
-   //      accurateTrackBounce:true,
-   //      webvisor:true,
-   //      ecommerce:"dataLayer"
-   // });
+   (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+   m[i].l=1*new Date();
+   for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+   k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+   (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+   ym(24968570, "init", {
+        clickmap:true,
+        trackLinks:true,
+        accurateTrackBounce:true,
+        webvisor:true,
+        ecommerce:"dataLayer"
+   });
 </script>
-<!--<noscript><div><img src="https://mc.yandex.ru/watch/24968570" style="position:absolute; left:-9999px;" alt="" /></div></noscript>-->
+<noscript><div><img src="https://mc.yandex.ru/watch/24968570" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
 <!-- /Yandex.Metrika counter -->
 <!-- Start zvonok online -->
 <script async type="text/javascript">

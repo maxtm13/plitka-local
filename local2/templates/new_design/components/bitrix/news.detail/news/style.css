@@ -1,0 +1,31 @@
+.is_article__text h3 {line-height: 27px; }
+.is_article__text h4{line-height: 20px; padding-bottom: 0; }
+.is-link_telegramm { font-size: 14px; text-align: right; padding: 10px 0; }
+.is_article .is-link_telegramm img { vertical-align: middle; margin: 0 10px; max-width: 30px; }
+.is_article__list { position: relative; margin-left: -20px; padding-top: 20px; }
+.is_article__date { position: relative; font-size: 16px; color: #333; padding: 0 0 10px 0; margin-bottom: 20px; z-index: 3; margin-left: 0; }
+.is_article__date::before { content: ''; position: absolute; width: 150px; bottom: 0; background: #ff8a00; height: 1px; border-radius: 2px; }
+.is_article__item { position: relative; display: inline-block; width: 20%; margin: 0 0 20px; box-sizing: border-box; padding-left: 20px; }
+.is_article__item a { position: relative; display: block; border: solid 1px #ededed; color: #333; text-decoration: none; box-sizing: border-box; padding: 5px; }
+.is_article__item a img { width: 100%; height: auto; box-sizing: border-box; border: solid 1px #ededed; display: block; }
+.is_article__item a.no-image { background: url('/images/no-image.png') center no-repeat; background-size: cover; }
+.is_article__text { width: 100%; padding-bottom: 20px; }
+.is_article__text img { margin: 20px 0; }
+.is_article__text a { color: #ff8a00; }
+.is_article img { max-width: 100%; height: auto; }
+.is_article__img-big { float: left; margin-right: 20px; padding-bottom: 10px; max-width: 600px; position: relative; overflow: hidden; }
+.is_article__img-big img { max-width: 100%; height: auto; } #is-docs { position: relative; margin-left: -5px; clear: both; } .is-docs { position: relative; margin-top: 30px; }
+
+@media(max-width:1050px){
+	.is_article__img-big { float: none; margin-right: 0; }
+	.is_article__list { margin-left: -10px; }
+	.is_article__item { width: 25%; margin: 0 0 10px; padding-left: 10px; }
+	.is_article__text { width: 100%; }
+}
+@media(max-width:768px){
+	.is-docs__info , .is-docs__number , .is-docs__size , .is-docs__name { font-size: 13px; }
+	.is_article__item { width: 50%; }
+}
+@media (max-width: 480px){
+	.is-docs__info , .is-docs__number , .is-docs__size , .is-docs__name { font-size: 12px; }
+}

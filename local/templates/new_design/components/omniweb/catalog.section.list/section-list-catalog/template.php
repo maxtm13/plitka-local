@@ -371,15 +371,44 @@ if ($arParams['IBLOCK_ID'] == CATALOG_ID && $arResult['SECTION']['DEPTH_LEVEL'] 
 					</div>				
 					<a href="<? echo $arSection['SECTION_PAGE_URL']; ?>" class="bx_catalog_tile_img section_type" title="<? echo $arSection['NAME']; ?>">
 						<img class="catalog_item_img" src="<?=$img['src']?>" alt="<? echo $arSection['NAME']; ?>" />
-						<? if ($arParams['HIDE_SEC_PRICE'] !== 'Y') {
+                     <!--   --><?
+$sectionId = $arSection['ID']; // ID нужного вам раздела
+$minPrice = NULL;
+
+// Добавляем в фильтр условие по свойству UNITS_TMP
+$arFilter = [
+    'IBLOCK_ID' => 4, 
+    'SECTION_ID' => $sectionId, 
+    'ACTIVE' => 'Y', 
+    'PROPERTY_UNITS_TMP' => 'кв. м.'
+];
+
+$arSelect = ['ID', 'IBLOCK_ID', 'NAME', 'CATALOG_GROUP_1']; // CATALOG_GROUP_1 - это базовая цена
+
+$res = CIBlockElement::GetList(['CATALOG_PRICE_1' => 'ASC'], $arFilter, false, ['nTopCount' => 1], $arSelect);
+if ($ob = $res->GetNextElement()) {
+   $arFields = $ob->GetFields();
+   $minPrice = $arFields['CATALOG_PRICE_1'];
+   $minPrice = round($minPrice); // Округление до ближайшего целого числа
+   
+   // Если вам нужно округлить минимальную цену до двух десятичных знаков, используйте:
+   // $minPrice = round($minPrice, 2);
+   
+   // Выведем значение минимальной цены для проверки (можете убрать это в реальном коде)
+   echo 'Минимальная цена: ' . $minPrice;
+}
+
+?>
+
+                        <? if ($arParams['HIDE_SEC_PRICE'] !== 'Y') {
 							if(!empty($arSection['UF_AVAILABILITY']) && $arSection['UF_AVAILABILITY'] == GetMessage('NO_AVALABILITY')){?>
 								<div class="sec-price"><?=GetMessage('NO_AVALABILITY')?></div>
-							<?} elseif (!empty($arSection['UF_CATALOG_PRICE_1'])) {?>
+							<?} ?>
 								<div class="sec-price-order"><?= GetMessage("PRICE_ORDER")?></div>
 								<?$cur = CCurrency::GetBaseCurrency();
 								$cost = CCurrencyLang::CurrencyFormat($arSection['UF_CATALOG_PRICE_1'], $cur, true); ?>
-								<div class="sec-price"><?= GetMessage("FROM")?> <?php echo $cost; ?></div>
-							<?php }
+								<div class="sec-price"><?= GetMessage("FROM")?> <?php echo  $minPrice; echo  "p.";?></div>
+							<?php 
 						} ?>
 					</a>
 				
@@ -400,7 +429,7 @@ if ($arParams['IBLOCK_ID'] == CATALOG_ID && $arResult['SECTION']['DEPTH_LEVEL'] 
 				<a class="bx_catalog_tile_title_black" href="<?php echo $arSection['PARENT_SECTION_INFO']['SECTION_PAGE_URL']; ?>"><? echo $arSection['PARENT_SECTION_INFO']['NAME']; ?></a>
 			<?endif; */?> 
 			<? //echo $arSection['RELATIVE_DEPTH_LEVEL']; ?>
-			<? echo $arFields["IBLOCK_ID"];?>
+	<!--		--><?/* echo $arFields["IBLOCK_ID"];*/?>
 				<?
 				}
 				?></li><?

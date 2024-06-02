@@ -44,6 +44,7 @@ $arItemIDs = array(
     'DISPLAY_PROP_DIV' => $strMainID.'_sku_prop',
     'OFFER_GROUP' => $strMainID.'_set_group_',
     'BASKET_PROP_DIV' => $strMainID.'_basket_prop',
+	'COMPATIBLE_MODE' => 'Y',
 );
 $strObName = 'ob'.preg_replace("/[^a-zA-Z0-9_]/", "x", $strMainID);
 $templateData['JS_OBJ'] = $strObName;
@@ -74,151 +75,6 @@ if ('Y' == $arParams['DISPLAY_NAME'])
     $arFirstPhoto = current($arResult['MORE_PHOTO']);
     ?>
     <div class="bx_item_container">
-        <div class="pan-left">
-        <div class ="title">Плитка Equipe Artisan 24464 White Настенная плитка 6,5х20 см</div>
-        <div class="panel-info">
-
-            <div class="articul"> Артикул <?=$arResult['ID'];?></div>
-            <div class="otz">Отзывы (0)</div>
-            <div class="sea"> <div class="img-sea"></div>
-                <?php
-                $res = CIBlockElement::GetByID($arResult["ID"]);
-                if($ar_res = $res->GetNext())
-                    echo 'Страницу смотели: '.$ar_res['SHOW_COUNTER'];
-
-                ?></div>
-            <div class="report"> <div class="img-report"></div><script src="https://yastatic.net/share2/share.js"></script>
-                <div class="ya-share2" data-curtain data-shape="round" data-limit="0" data-more-button-type="short" data-services="messenger,vkontakte,odnoklassniki"></div></div>
-            <div class="like"> <div class="img-like"></div>В избранное
-                <div class="product-stars">
-                    <?
-                    //Общее количество отложенных товаров
-                    use Bitrix\Main\Loader;
-                    Loader::includeModule("sale");
-                    $delaydBasketItems = CSaleBasket::GetList(
-                        array(),
-                        array(
-                            "FUSER_ID" => CSaleBasket::GetBasketUserID(),
-                            "LID" => SITE_ID,
-                            "ORDER_ID" => "NULL",
-                            "DELAY" => "Y"
-                        ),
-                        array()
-                    );
-
-
-                    //Проверяем, есть ли текущий товар в отложенных.
-                    $isDelayed = false;
-                    if(\Bitrix\Main\Loader::includeModule("sale"))
-                    {
-                        $dbBasketItems = CSaleBasket::GetList(
-                            array(
-                                "NAME" => "ASC",
-                                "ID" => "ASC"
-                            ),
-                            array(
-                                "FUSER_ID" => CSaleBasket::GetBasketUserID(),
-                                "LID" => SITE_ID,
-                                "ORDER_ID" => "NULL",
-                                "DELAY" => "Y" //разкоментировать, и только отложенные товары будут получены
-                            ),
-                            false,
-                            false,
-                            array("ID", "DELAY", "PRODUCT_ID")
-                        );
-                        while ($arItems = $dbBasketItems->Fetch())
-                        {
-                            //echo '<pre>';
-                            //print_r($arItems["PRODUCT_ID"]);
-                            //echo '</pre>';
-                            if($arResult["ID"]==$arItems["PRODUCT_ID"]){
-                                $isDelayed = true;
-                                break;
-                            }
-                        }
-                    }
-
-                    ?>
-                    <?
-                    global $USER;
-                    //var_dump($USER->IsAuthorized());
-                    if ($USER->IsAuthorized() && $arResult["ACTIVE"] == "Y"){?>
-                        <?if(!$isDelayed){?>
-                            <span class="favorite-icon wishbtn"
-                                  onclick="add2wish('<?=$arResult["ID"]?>','<?=$arResult["CATALOG_PRICE_ID_1"]?>','<?=$arResult["CATALOG_PRICE_1"]?>','<?=$arResult["NAME"]?>','<?=$arResult["DETAIL_PAGE_URL"]?>',this)">
-						<img src="<?=SITE_TEMPLATE_PATH?>/images/favorite.png" alt="Favorite-Whishlist"/>
-						<div class="count"><?=$delaydBasketItems?></div>
-					</span>
-                        <?}else{?>
-                            <span class="favorite-icon wishbtn in_wishlist">
-						<img src="<?=SITE_TEMPLATE_PATH?>/images/favorite_full.png" alt="Whishlist" />
-						<div class="count"><?=$delaydBasketItems?></div>
-					</span>
-                        <?}
-                    }
-                    ?>
-                    <?
-                    $useBrands = ('Y' == $arParams['BRAND_USE']);
-                    $useVoteRating = ('Y' == $arParams['USE_VOTE_RATING']);
-                    if ($useBrands || $useVoteRating)
-                    {
-
-                        ?>
-
-
-                        <div class="new-vote bx_optionblock">
-                            <?
-                            if ($useVoteRating)
-                            {
-                                ?><? /* $APPLICATION->IncludeComponent(
-                "bitrix:iblock.vote",
-                "stars1",
-                array(
-                    "IBLOCK_TYPE" => $arParams['IBLOCK_TYPE'],
-                    "IBLOCK_ID" => $arParams['IBLOCK_ID'],
-                    "ELEMENT_ID" => $arResult['ID'],
-                    "ELEMENT_CODE" => "",
-                    "MAX_VOTE" => "5",
-                    "VOTE_NAMES" => array("1", "2", "3", "4", "5"),
-                    "SET_STATUS_404" => "N",
-                    "DISPLAY_AS_RATING" => $arParams['VOTE_DISPLAY_AS_RATING'],
-                    "CACHE_TYPE" => $arParams['CACHE_TYPE'],
-                    "CACHE_TIME" => $arParams['CACHE_TIME']
-                ),
-                $component,
-                array("HIDE_ICONS" => "Y")
-            ); */ ?><?
-                            }
-                            if ($useBrands)
-                            {
-                                ?><?$APPLICATION->IncludeComponent("bitrix:catalog.brandblock", ".default", array(
-                                "IBLOCK_TYPE" => $arParams['IBLOCK_TYPE'],
-                                "IBLOCK_ID" => $arParams['IBLOCK_ID'],
-                                "ELEMENT_ID" => $arResult['ID'],
-                                "ELEMENT_CODE" => "",
-                                "PROP_CODE" => $arParams['BRAND_PROP_CODE'],
-                                "CACHE_TYPE" => $arParams['CACHE_TYPE'],
-                                "CACHE_TIME" => $arParams['CACHE_TIME'],
-                                "CACHE_GROUPS" => $arParams['CACHE_GROUPS'],
-                                "WIDTH" => "",
-                                "HEIGHT" => ""
-                            ),
-                                $component,
-                                array("HIDE_ICONS" => "Y")
-                            );?><?
-                            }
-                            ?>
-                        </div>
-                        <?
-                    }
-                    unset($useVoteRating);
-                    unset($useBrands);
-                    ?>
-
-                </div>
-            </div>
-        </div>
-        </div>
         <div class="bx_lt">
             <? \Bitrix\Main\Page\Frame::getInstance()->startDynamicWithID("icon"); ?>
             <? if($arResult["HIDE_ICON"] != true):?>
@@ -285,26 +141,11 @@ if ('Y' == $arParams['DISPLAY_NAME'])
                     </div>
                 <? endif; ?>
             </div>
-
             <? if ($arResult["ACTIVE"] == "N") {?>
                 <div class="no-active">
                     <img alt="Снято с производства" title="Снято с производства" src="<?=SITE_TEMPLATE_PATH?>/images/snyato.png">
                 </div>
             <? } ?>
-            <div class="info-pic">
-                <div class="desc-pic" >
-                    <img src="/local/templates/new_design/components/bitrix\catalog\template1\bitrix\catalog.element\.default\Frame 7.png">
-                </div>
-                <div class="desc-pic">
-                    <img src="/local/templates/new_design/components/bitrix\catalog\template1\bitrix\catalog.element\.default\Frame 5.png">                </div>
-                <div class="desc-pic">
-                    <img src="/local/templates/new_design/components/bitrix\catalog\template1\bitrix\catalog.element\.default\Frame 4.png">
-                </div>
-                <div class="desc-pic">
-
-                    <img src="/local/templates/new_design/components/bitrix\catalog\template1\bitrix\catalog.element\.default\Frame 8.png">
-                </div>
-            </div>
         </div>
         <? include 'top.php'; ?>
         <div class="clear"></div>

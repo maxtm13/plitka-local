@@ -1,0 +1,31 @@
+div.modern-page-navigation { text-align: center; padding: 20px 0; font-size: 16px; color: #333; text-transform: lowercase; }
+div.modern-page-navigation a, 
+span.modern-page-current, 
+span.modern-page-dots
+{
+	border-left-width: 1px;
+	border-left-style: solid;
+	padding-left: 0.75em;
+	padding-right: 0.5em;
+	text-decoration: none;
+}
+div.modern-page-navigation a.modern-page-previous { 
+	border-right-width: 1px; 
+	border-right-style: solid; 
+	border-left: none; }
+div.modern-page-navigation a.modern-page-first, 
+div.modern-page-navigation span.modern-page-first { 
+	border-left: none; 
+	padding-left: 0.5em; }
+span.modern-page-current { cursor: default; color: #F0190A; }
+div.modern-page-navigation a, 
+span.modern-page-current, 
+div.modern-page-navigation a.modern-page-previous, 
+span.modern-page-dots { 
+	border-color: #cdcdcd; }
+
+.modern-page-navigation a { font-size: 16px; text-decoration: none; }
+.modern-page-navigation a:hover { color: #F0190A; }
+
+.modern-page-title { color: #333; }
+.modern-page-previous , .modern-page-next { font-size: 0; }

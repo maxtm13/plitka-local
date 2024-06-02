@@ -63,9 +63,6 @@ $arParams['USE_FILTER'] = (isset($arParams['USE_FILTER']) && $arParams['USE_FILT
 				/*
 Комментарий выше не ясен - так как не обнаружено в каких местах этот блок выводится
 */
-echo "<!--<pre>";
-print_r("1");
-echo "</pre>-->";
 
 
                 $GLOBALS['arrCountrySectionsFilter'] = ['DEPTH_LEVEL' => 3];
@@ -241,9 +238,6 @@ echo "</pre>-->";
 
             if ($showSectionsList && !in_array($_SERVER["SCRIPT_URL"] , ['/sukhie-stroitelnye-smesi/', '/napolnye-pokrytiya/', '/collections/', '/santekhnika/'] )) {
 
-echo "<!--<pre>";
-print_r("3");
-echo "</pre>-->";
 				$APPLICATION->IncludeComponent(
                     "bitrix:catalog.section.list",
                     "section-list-catalog",
@@ -393,9 +387,6 @@ echo "</pre>-->";
                 if($arParams["IBLOCK_ID"] == 4 && $arSec['DEPTH_LEVEL'] == 3) {
                     $template_section = "section_collection";
                 }
-echo "<!--<pre>";
-print_r("test");
-echo "</pre>-->";
 
 				$APPLICATION->IncludeComponent(
 					"bitrix:catalog.section",

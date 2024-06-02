@@ -1526,7 +1526,7 @@ html.bx-no-touch body,
 	display: none;
 }
 [class^="calc-measures"] a {
-	
+	margin-right: 10px;
 }
 [class^="calc-measures"] .active {
 	text-decoration: none;

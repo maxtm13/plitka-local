@@ -11,7 +11,7 @@ $APPLICATION->SetTitle("Оплата");
 	<div class="oplata-page__items">
 		<div class="oplata-page__item">
 			<div class="oplata-page__item-info">
-				<img src="/local/templates/new_design/images/nalik.png" alt="">
+				<img src="/local2/templates/new_design/images/nalik.png" alt="">
 				<div class="oplata-page__item-desc">
 					<div class="oplata-page__item-title">
 						НАЛИЧНЫЙ РАСЧЁТ
@@ -24,7 +24,7 @@ $APPLICATION->SetTitle("Оплата");
 		</div>
 		<div class="oplata-page__item">
 			<div class="oplata-page__item-info">
-				<img src="/local/templates/new_design/images/cart.png" alt="">
+				<img src="/local2/templates/new_design/images/cart.png" alt="">
 				<div class="oplata-page__item-desc">
 					<div class="oplata-page__item-title">
 						БЕЗНАЛИЧНЫЙ РАСЧЁТ
@@ -37,7 +37,7 @@ $APPLICATION->SetTitle("Оплата");
 		</div>
 		<div class="oplata-page__item">
 			<div class="oplata-page__item-info">
-				<img src="/local/templates/new_design/images/bank.png" alt="">
+				<img src="/local2/templates/new_design/images/bank.png" alt="">
 				<div class="oplata-page__item-desc">
 					<div class="oplata-page__item-title">
 						БАНКОВСКИЙ ПЕРЕВОД
@@ -50,7 +50,7 @@ $APPLICATION->SetTitle("Оплата");
 		</div>
 		<div class="oplata-page__item">
 			<div class="oplata-page__item-info">
-				<img src="/local/templates/new_design/images/rassrochka_v4.png" alt="">
+				<img src="/local2/templates/new_design/images/rassrochka_v4.png" alt="">
 				<div class="oplata-page__item-desc">
 					<div class="oplata-page__item-title">
 						В рассрочку

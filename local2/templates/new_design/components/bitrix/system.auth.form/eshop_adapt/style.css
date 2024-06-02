@@ -1,0 +1,18 @@
+.bx_login_block{float: left;padding-left: 50px;
+}
+a.bx_login_top_inline_link{color: #fff;vertical-align: middle;text-decoration: none;font-size: 14px;text-transform:uppercase;margin: 0 8px 0 5px;text-shadow: -1px -1px 1px #af4516;
+}
+a.bx_login_top_inline_link:hover{text-decoration: underline}
+/*.bx_login_top_inline_icon{display: inline-block;margin-left: 15px;width: 16px;height: 13px;background: url('images/gui.png') no-repeat bottom center;line-height: 13px;
+}*/
+.bx_login_popup_form {min-width:310px;min-height:350px;padding: 0 0 10px 10px;
+}
+.bx_login_ico a {
+    width: 17px;
+    height: 17px;
+    float: left;
+    padding-left: 3px;
+    background: url('/bitrix/templates/eshop_adapt_blue/images/dude.png') no-repeat 10% center;
+}
+.d-inline {display: inline-block; }
+.v-midle { vertical-align: middle; }

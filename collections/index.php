@@ -269,7 +269,7 @@ if ($showSection) {
 
 	$APPLICATION->IncludeComponent(
 	"bitrix:catalog", 
-	"template1", 
+	"new-template1",
 	array(
 		"NIGHT" => checkTime(),
 		"IBLOCK_TYPE" => "catalog",

@@ -11,6 +11,9 @@
 /** @var string $componentPath */
 /** @var CBitrixComponent $component */
 
+
+use Bitrix\Catalog\MeasureTable;
+
 $this->setFrameMode(true);
 
 $APPLICATION->AddHeadScript("local\templates\new_design\components\bitrix\catalog\template1\bitrix\catalog.section\.default\script.js");
@@ -112,22 +115,36 @@ $delaydBasketItems = CSaleBasket::GetList(
         <? } ?>
     </div>
     <div class="header-page-block__right">
-        <?if($arResult["UF_CATALOG_PRICE_1"]) {?>
+        
             <div class="price-info">
+
 <?		
 $sectionId = $arResult['ID']; // ID нужного вам раздела
 $minPrice = NULL;
+$ignoreIDs = array();
 
-$arFilter = ['IBLOCK_ID' => $arResult['IBLOCK_ID'], 'SECTION_ID'=> $sectionId, 'ACTIVE' => 'Y'];
-$arSelect = ['ID', 'IBLOCK_ID', 'NAME', 'CATALOG_GROUP_1']; // CATALOG_GROUP_1 - это базовая цена
+while(true) {
+	$arFilter = ['IBLOCK_ID' => $arResult['IBLOCK_ID'], 'SECTION_ID'=> $sectionId, '!ID' => $ignoreIDs, 'ACTIVE' => 'Y'];
+	$arSelect = ['ID', 'IBLOCK_ID', 'NAME', 'CATALOG_GROUP_1']; // CATALOG_GROUP_1 - это базовая цена
+	
+	$res = CIBlockElement::GetList(['CATALOG_PRICE_1' => 'ASC'], $arFilter, false, ['nTopCount' => 1], $arSelect);
+	if($ob = $res->GetNextElement()) {
+		$arFields = $ob->GetFields();
 
-$res = CIBlockElement::GetList(['CATALOG_PRICE_1' => 'ASC'], $arFilter, false, ['nTopCount' => 1], $arSelect);
-if($ob = $res->GetNextElement()) {
-   $arFields = $ob->GetFields();
-   $minPrice = $arFields['CATALOG_PRICE_1'];
+		if ($arFields['CATALOG_MEASURE'] == 6) {
+			$minPrice = $arFields['CATALOG_PRICE_1'];
+			$minPrice = round($minPrice); // Округление до ближайшего целого числа
+			// Или, если вам нужно округлить до двух десятичных знаков:
+			// $minPrice = round($minPrice, 2);
+			break;
+		}
+		else {
+			$ignoreIDs[] = $arFields['ID'];
+		}
+	} else {
+        break;
+    }
 }
-
-
 ?>
                 <?$cur = CCurrency::GetBaseCurrency();?>
                 <?$cost = CCurrencyLang::CurrencyFormat($arResult['UF_CATALOG_PRICE_1'], $cur, false); ?>
@@ -135,7 +152,7 @@ if($ob = $res->GetNextElement()) {
                 <?=GetMessage('CT_PRICE_MEASURE')?>
                 <?//$arResult["ITEMS"][0]["CATALOG_MEASURE_NAME"]?>
             </div>
-        <?}?>
+
         <a class="btn_product" href="#products_tab"><?=GetMessage('BTN_PRODUCT')?></a>
 
         <div class="item_info_section">
@@ -449,7 +466,7 @@ if($ob = $res->GetNextElement()) {
                                 <? if(!empty($img['src'])):?>
                                     <img src="<?= $img['src'] ?>" class="catalog_item_img" alt="<?= $strTitle ?>" />
                                 <? else: ?>
-                                    <img src="/local/image/new_design/empty.jpg" class="catalog_item_img" alt="<?= $strTitle ?>" />
+                                    <img src="/local2/image/new_design/empty.jpg" class="catalog_item_img" alt="<?= $strTitle ?>" />
                                 <? endif; ?>
 
                                 <?

@@ -1,0 +1,26 @@
+.popular-brands { position: relative; overflow: hidden; padding-bottom: 20px; }
+.popular-brands h3 { position: relative; font-size: 20px; color: #000; font-weight: 500; padding: 12px 0 22px; margin-bottom: 25px; border-bottom: solid 2px #e0e0e0; }
+.popular-brands h3:before , .popular-brands h3:after { content: ''; position: absolute; bottom: -7px; width: 14px; height: 14px; background: url("/image/new_design/plus.png") center no-repeat; }
+.popular-brands h3:after { right: 0; }
+
+.popular-brands__list { position: relative; overflow: hidden; width: 100%; overflow-x: auto; white-space: nowrap; font-size: 0; letter-spacing: normal; margin:0 0 0 -10px; }
+.popular-brands__item { display: inline-block; width: 170px; vertical-align: middle; }
+.popular-brands__item a { display: block; width: 160px; height: 160px; line-height: 160px; overflow: hidden; margin: 0 0 10px 10px;  text-align: center; border: solid 1px #e0e0e0; box-sizing: border-box; }
+.popular-brands__item a img { display: inline-block; vertical-align: middle; width: 150px; height: auto; }
+.popular-brands__item a:first-child { margin-bottom: 10px; }
+
+.popular-brands__item a:hover { border: solid 1px #ff8a00; }
+
+.popular-brands__list::-webkit-scrollbar { width: 6px; height: 6px; }
+.popular-brands__list::-webkit-scrollbar-track { background: #fff; }
+.popular-brands__list::-webkit-scrollbar-thumb { background-color: rgba(0,0,0,0.6); border-radius: 20px; border: 1px solid #fff; }
+
+.is-flag { position: absolute; right: -1px; bottom: -1px; padding: 5px; border: solid 1px #e0e0e0; z-index: 10; background-color: #fff; line-height: normal; }
+.is-flag img { border: solid 1px #cccc; }
+
+.popular-brands__h {display: inline-block; height: 100%; vertical-align: middle; }
+.popular-brands__name {display: inline-block; vertical-align: middle; font-size: 20px; font-weight: 400; text-align: center; line-height: 30px; }
+
+@media(max-width:480px){
+	.popular-brands h3 { font-size: 20px; }
+}
