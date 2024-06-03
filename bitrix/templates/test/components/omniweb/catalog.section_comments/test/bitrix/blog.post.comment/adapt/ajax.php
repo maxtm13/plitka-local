@@ -1,0 +1,1 @@
+<? require($_SERVER["DOCUMENT_ROOT"]."/bitrix/components/omniweb/catalog.section_comments/templates/.default/ajax.php"); ?>

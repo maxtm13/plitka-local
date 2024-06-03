@@ -1,0 +1,6 @@
+<?
+$MESS["CT_BST_SEARCH_BUTTON"] = "Поиск";
+/*RBS_CUSTOM_START*/
+$MESS["CT_BST_SEARCH_LABEL"] = "Я ищу...";
+/*RBS_CUSTOM_END*/
+?>

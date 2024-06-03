@@ -1,0 +1,81 @@
+/* ---- INC ABOUT FOOTER ---- */
+.bx_inc_about_footer p{color: #4c4a3f}
+.bx_inc_about_footer a{color: #0073a3}
+
+/* FOOTER WRAP */
+.bottom_wrap{
+	background:url(images/lightblue_bg.png);
+	box-shadow:inset 0 -3px 6px rgba(0,0,0,.25), inset 0 12px 11px -10px rgba(0,0,0,.2);
+}
+
+
+/* components top_nav */
+.footer_contact{
+	color: #fff;
+	text-shadow:0 -1px 0 rgba(0,0,0,.3);
+}
+
+.bx_title_section.stars .icon{background:url(images/stars.png) no-repeat center left}
+.bx_title_section.time  .icon{background:url(images/time.png)  no-repeat center left}
+
+.bx_topnav{
+	margin: 0;
+	padding: 16px 0 5px;
+}
+.bx_topnav li{
+	display: inline-block;
+	margin-right: 2%;
+}
+.bx_topnav li a{
+	color:#000;
+	text-shadow:0 1px 1px rgba(255,255,255,.5);
+	text-decoration: none;
+	font-size: 14px;
+}
+.bx_topnav li a:hover{text-decoration: underline;}
+.bx_topnav li a:active{color: #5b4f3c;}
+
+.bx_topnav,
+.bx_topnav *{
+	-webkit-transition: all 0.3s ease;
+	-moz-transition: all 0.3s ease;
+	-ms-transition: all 0.3s ease;
+	-o-transition: all 0.3s ease;
+	transition: all 0.3s ease;
+}
+
+
+
+
+/* component inc_catalog_footer */
+.bx_inc_catalog_footer{
+	color: #fff;
+	text-shadow:0 1px 2px #17326e;
+}
+.bx_inc_catalog_footer h3{
+	background: url(images/footer_h4_bg.png) repeat-x bottom;
+}
+.bx-touch .bx_inc_catalog_footer h3{
+	background: url(images/x2footer_h4_bg.png) repeat-x bottom;
+}
+.bx_inc_catalog_footer ul li a{
+	color: #fff;
+	text-shadow:0 1px 2px #17326e;
+}
+
+
+/* component inc_menu_footer */
+.bx_inc_menu_footer{
+	color: #fff;
+	text-shadow:0 1px 2px #17326e;
+}
+.bx_inc_menu_footer h3{
+	background: url(images/footer_h4_bg.png) repeat-x bottom;
+}
+.bx-touch .bx_inc_menu_footer h3{
+	background: url(images/x2footer_h4_bg.png) repeat-x bottom;
+}
+.bx_inc_menu_footer ul li a{
+	color: #fff;
+	text-shadow:0 1px 2px #17326e;
+}

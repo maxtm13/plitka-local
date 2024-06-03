@@ -1,0 +1,19 @@
+a[data-fancybox="gallery"] img{
+    height: 64px;
+}
+
+.wishbtn{
+    cursor: pointer;
+}
+
+.in_wishlist{
+    cursor: initial;
+}
+
+.bx_content_section .groupLinks + .fancy-wrap a{
+    text-decoration: none;
+}
+
+.bx_content_section .groupLinks + .fancy-wrap a img{
+    height: 170px;
+}
