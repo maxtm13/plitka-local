@@ -1,0 +1,23 @@
+/* RBS_START */
+@media( max-width: 767px){
+	.sertifiates { display: none; }
+}
+@media (max-width: 800px){
+	.sidebar { width: 40% !important; left:  -60px !important; margin-left: 5px !important;}
+	.bx_filter_title a { padding: 5px; }
+	#con-choosen .bx_filter_container_title { margin: 0; }
+	#bx_eshop_wrap .sidebar { margin-top: -25px !important; }
+}
+@media (max-width: 425px){
+	.sidebar { width: 245px !important; left:  -55px !important; margin-left: 5px !important;}
+	#bx_eshop_wrap .sidebar { margin-top: -45px !important; padding-left: 10%;}
+
+}
+@media (max-width: 375px){
+	.sidebar { width: 245px !important; left:  -15px !important; margin-left: 5px !important;}
+	#bx_eshop_wrap .sidebar { margin-top: -45px !important; }
+}
+
+input#set_filter { width: 45%; margin-bottom: 10px; }
+input#del_filter{ width: 45%;  }
+a.bx_filter_search_button_1 { padding: 5px; }

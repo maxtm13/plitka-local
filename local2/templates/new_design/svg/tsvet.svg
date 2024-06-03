@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 28.94 28.94">
+	<defs><style>.cls-1{fill:#ff8a00;}</style></defs>
+	<path class="cls-1" d="M7.64,1A1.08,1.08,0,0,1,8.72,2.1V27.93H1.06V2.1A1.08,1.08,0,0,1,2.14,1h5.5m0-1H2.14A2.08,2.08,0,0,0,.06,2.1V28.93H9.72V2.1A2.08,2.08,0,0,0,7.64,0Z"/>
+	<circle class="cls-1" cx="4.91" cy="24" r="2"/>
+	<path class="cls-1" d="M19.38,4.12,14.61,1.37a2,2,0,0,0-1-.28,2.06,2.06,0,0,0-1.8,1L9.38,6.27v2l3.26-5.66a1.1,1.1,0,0,1,1.48-.4L18.88,5a1.09,1.09,0,0,1,.39,1.48l-10,17.33v2L20.14,7A2.08,2.08,0,0,0,19.38,4.12Z"/>
+	<rect class="cls-1" x="0.02" y="19.22" width="0.46" height="9.67"/>
+	<path class="cls-1" d="M26.94,14.1,24,9.46a2.09,2.09,0,0,0-1.76-1,2,2,0,0,0-1.12.33L16.9,11.5l-1,1.86,5.79-3.69a1.09,1.09,0,0,1,1.5.33l2.95,4.64a1.07,1.07,0,0,1-.33,1.49L9.18,26.7v1.19L26.3,17A2.1,2.1,0,0,0,26.94,14.1Z"/>
+	<path class="cls-1" d="M26.85,19.22H22l-1.68,1h6.54a1.08,1.08,0,0,1,1.08,1.08v5.5a1.08,1.08,0,0,1-1.08,1.09H9.35v1h17.5a2.09,2.09,0,0,0,2.08-2.09V21.3A2.08,2.08,0,0,0,26.85,19.22Z"/>
+	<rect class="cls-1" x="15.11" y="0.88" width="1" height="8.42" transform="translate(3.4 16.06) rotate(-60)"/>
+	<rect class="cls-1" x="12.61" y="5.16" width="1" height="8.42" transform="translate(-1.56 16.04) rotate(-60)"/>
+	<rect class="cls-1" x="11.29" y="11.09" width="1" height="6.06" transform="translate(-6.33 17.27) rotate(-60)"/>
+	<rect class="cls-1" x="22.78" y="8.61" width="1" height="8.5" transform="translate(-3.23 15.08) rotate(-33.7)"/>
+	<rect class="cls-1" x="19.09" y="11.39" width="1" height="8.5" transform="translate(-5.39 13.5) rotate(-33.7)"/>
+	<rect class="cls-1" x="15.39" y="15.65" width="1" height="6.89" transform="translate(-7.93 12.03) rotate(-33.7)"/>
+	<rect class="cls-1" x="11.8" y="20.83" width="1" height="4.31" transform="translate(-10.69 10.69) rotate(-33.7)"/>
+	<rect class="cls-1" x="25.92" y="19.86" width="1" height="8.59"/>
+	<rect class="cls-1" x="20.92" y="19.86" width="1" height="8.59"/>
+	<rect class="cls-1" x="15.92" y="22.67" width="1" height="5.78"/>
+	<rect class="cls-1" x="11.92" y="25.2" width="1" height="3.25"/>
+</svg>
