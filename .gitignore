@@ -32,3 +32,5 @@
 *.tar.gz
 *.dat
 .htaccess
+gmap_init.js
+agents.php
