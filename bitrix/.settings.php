@@ -77,7 +77,7 @@ return array (
         'host' => 'localhost',
         'database' => 'maxtm1_plitka',
         'login' => 'maxtm1_plitka',
-        'password' => 'Stepler21',
+        'password' => 'Cntgkth21',
         'options' => 2,
       ),
     ),

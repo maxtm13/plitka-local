@@ -149,12 +149,14 @@ if(!empty($res["IBLOCK_SECTION_ID"]) && $res["IBLOCK_ID"] == 4 || !empty($res["I
 //Убрать текущий элемент из списка
 $findIDcurrentElement = CIBlockElement::GetList(array(), array("IBLOCK_ID"=>$res["IBLOCK_ID"], "CODE" => $res["CODE"]), false, array("nPageSize"=>1), array('ID'))->Fetch()["ID"];
 //================================
-
+pre([$findIDcurrentElement]);
 if(!empty($isfilter)){
 
 	global $checkdate, $usergropus, $checktime, $dir, $ccurency;
 
-	$APPLICATION->IncludeComponent("bitrix:catalog.main","product_list", [
+	echo "<span class='maxtm1' style='font-size: 24px'>bitrix:catalog.main - product_list " . $isfilter ." </span>";
+
+	$APPLICATION->IncludeComponent("bitrix:catalog.main","new-product_list_slider", [
 		"COMPATIBLE_MODE" => "Y",
 		"IBLOCK_TYPE" => "catalog",
 		"IBLOCK_ID" => [$arParams["IBLOCK_ID"]],

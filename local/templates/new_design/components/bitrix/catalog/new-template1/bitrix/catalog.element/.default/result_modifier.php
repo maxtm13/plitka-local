@@ -518,7 +518,7 @@ $arResult["HIDE_ICON"] = false;
 
 // Выключаем выходные дни "ночные цены"
 /*if (in_array($week_day, array(6,7)) || (!in_array($week_day, array(6,7)) && (($hour >= 20 && $minutes >= 45) || ($hour <= 8 && $minutes < 30)))) {*/
-
+pre($arResult['IBLOCK_SECTION_ID']);
 if ($arResult['PROPERTIES']['NIGHT_PRICE']['VALUE'] == 1 && $arParams["NIGHT"] == 1) {
 
 	$arResult["HIDE_ICON"] = true;

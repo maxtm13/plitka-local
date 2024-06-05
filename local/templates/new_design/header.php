@@ -44,6 +44,12 @@ $allmainpages = [
     <meta name="msapplication-TileColor" content="#000000">
     <meta name="msapplication-config" content="/local/templates/new_design/icons/browserconfig.xml">
     <meta name="theme-color" content="#ffffff">
+    <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
 	<? // $APPLICATION->SetAdditionalCSS(SITE_TEMPLATE_PATH . '/custom.css'); ?>
 	
