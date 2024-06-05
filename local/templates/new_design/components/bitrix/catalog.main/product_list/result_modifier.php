@@ -286,7 +286,15 @@ if(!empty($arResult["ITEMS"])){
 			}
 		}
 	}
-	
+    $IBLOCK_ID = $arParams["IBLOCK_ID"][0];
+    foreach ($arResult['GOODS'] as $item) {
+        $res = CIBlockElement::GetProperty($IBLOCK_ID, $item['ID'], array("sort" => "asc"), array('ACTIVE'=>'Y'));
+        while ($ob = $res->GetNext()) {
+            $arResult['GOODS'][$item['ID']]['PROPS'][$ob['CODE']] = $ob['VALUE'];
+        }
+
+    }
+
 	$arResult["PAGINATION"] = $res->GetPageNavString(
 		'Элементы', // поясняющий текст
 		'round',   // имя шаблона

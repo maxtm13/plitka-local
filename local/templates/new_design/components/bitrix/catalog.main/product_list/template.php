@@ -12,12 +12,12 @@
 			<? endif; ?>
 		<? endif; ?>
 	</div>
-	<div class="is-goods__list">
+	<div class="is-goods__list maxtm1">
 		<div class="is-goods__list">
+            <?// pre($arResult); ?>
 			<? foreach($arResult["IDS"] as $isid):
 				$pr = $dp = ''; $sale = 0;
 				$item = $arResult["GOODS"][$isid];
-
 				if($item['PICTURE']['width'] > $item['PICTURE']['height']){
 					$imgstyle = "po-shirine";
 				}
@@ -70,7 +70,8 @@
 					<img class="is-img" src="/image/new_design/empty.jpg" alt="<?=$item["NAME"];?>" />
 					<? endif; ?>
 					<strong class="is-goods__name"><?=$item["NAME"];?></strong>
-					<span class="is-goods__price"><? if($dp > 0 && $pr > $dp){?><span class="is-goods__price-old"><?=number_format($pr, 0, '', ' ');?> руб.</span><? } ?><?=number_format(($dp > 0 ? $dp : $pr), 0, '', ' ');?> <span class="is-quanty__type">руб.<?=(!empty($item["UNITS_TMP"]) ? '/'.$item["UNITS_TMP"] : '');?></span></span>
+                    <p class="goods__id">Артикул <?= $item['PROPS']['BAU_CODE'];?></p>
+                    <span class="is-goods__price"><? if($dp > 0 && $pr > $dp){?><span class="is-goods__price-old"><?=number_format($pr, 0, '', ' ');?> руб.</span><? } ?><?=number_format(($dp > 0 ? $dp : $pr), 0, '', ' ');?> <span class="is-quanty__type">руб.<?=(!empty($item["UNITS_TMP"]) ? '/'.$item["UNITS_TMP"] : '');?></span></span>
 				</a>
 				<div class="is-goods__basket" data-id="<?=$item["ID"];?>"></div>
 			</div>
